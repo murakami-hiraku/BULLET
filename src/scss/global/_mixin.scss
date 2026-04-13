@@ -1,0 +1,19 @@
+// global/_mixin.scss
+
+@use "sass:map";
+
+$breakpoints: (
+  xs: "(max-width: 389px)",
+  sp: "(max-width: 767px)",
+  tb: "(min-width: 768px)",
+  pc: "(min-width: 1024px)",
+  lg: "(min-width: 1440px)",
+  xl: "(min-width: 1920px)",
+);
+
+// デフォルトをsp
+@mixin mq($breakpoint: sp) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
