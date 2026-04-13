@@ -1,0 +1,64 @@
+// src/scss/global/_reset.scss
+
+/* ブラウザのデフォルトスタイルをリセット */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* マージン、パディングをゼロに */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* リストのポッチを消す */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 画像の扱いを楽にする */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* フォーム要素のフォントを継承 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ボタンのデフォルトスタイルを消す */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* リンクのデフォルトスタイル */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* テーブルの隙間を消す */
+table {
+  border-collapse: collapse;
+}
