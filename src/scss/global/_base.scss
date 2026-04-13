@@ -1,0 +1,42 @@
+// global/_base.scss
+@use "variables" as v; // 変数を使いたい場合
+
+html {
+}
+
+body {
+  // 基本のフォント設定
+  font-size: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1.8;
+  color: v.$color-text;
+
+  // 背景のデフォルト
+  background-color: v.$color-bg;
+
+  // 余計な余白を消す
+  margin: 0;
+  padding: 0;
+
+  // 文字を滑らかにする設定（Mac用）
+  -webkit-font-smoothing: antialiased;
+}
+
+// 共通の画像設定（はみ出し防止）
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+// リンクの基本
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

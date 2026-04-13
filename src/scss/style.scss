@@ -1,0 +1,16 @@
+// src/scss/style.scss
+
+// 1. 設定・リセット
+@use "global/reset";
+@use "global/base";
+@use "global/variables";
+@use "global/mixin";
+
+// 2. レイアウト
+@use "layout/header";
+@use "layout/footer";
+@use "layout/l-inner";
+
+// 3. コンポーネント
+
+// 4. 各セクション
