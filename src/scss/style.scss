@@ -1,16 +1,18 @@
 // src/scss/style.scss
 
-// 1. 設定・リセット
+// 1.リセット(最優先)
 @use "global/reset";
-@use "global/base";
+
+// 2. 共通設定（変数、ミックスイン）
 @use "global/variables";
 @use "global/mixin";
+@use "global/base";
 
-// 2. レイアウト
+// 3. レイアウト
 @use "layout/header";
 @use "layout/footer";
 @use "layout/l-inner";
 
-// 3. コンポーネント
+// 4. コンポーネント
 
-// 4. 各セクション
+// 5. 各セクション
