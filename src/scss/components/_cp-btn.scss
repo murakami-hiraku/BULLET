@@ -21,6 +21,11 @@
     justify-content: center;
     color: v.$color-text-white;
 
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
     span {
       font-size: 24px;
     }
@@ -32,11 +37,6 @@
 
     a {
       gap: 4px;
-
-      img {
-        width: 28px;
-        height: 28px;
-      }
     }
   }
 
@@ -46,11 +46,6 @@
 
     a {
       gap: 9px;
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
     }
   }
 }

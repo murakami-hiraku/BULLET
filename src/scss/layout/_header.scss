@@ -12,6 +12,7 @@
     justify-content: space-between;
     max-width: v.$inner-width;
     margin: 0 auto;
+    max-width: 1680px;
   }
 
   &__logo img {
@@ -24,7 +25,25 @@
 
     @include m.mq(tb) {
       display: flex;
-      gap: 10px;
+      justify-content: end;
+      gap: 20px;
+      padding-right: 11.4583vw;
+    }
+
+    .cp-btn {
+      width: 200px;
+      height: 40px;
+
+      a {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      span {
+        font-size: 16px;
+      }
     }
   }
 }
