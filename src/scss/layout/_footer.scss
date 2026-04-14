@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "../global/variables" as v; // 変数を使いたい場合
+@use "../global/mixin" as m; // ミックスインを使いたい場合
+
+.l-footer {
+  background: #000;
+  height: 34px;
+
+  &__inner {
+    padding-block: 3px;
+    text-align: center;
+  }
+
+  &__copy {
+    color: v.$color-text-white;
+    letter-spacing: 0.05em;
+  }
+}
