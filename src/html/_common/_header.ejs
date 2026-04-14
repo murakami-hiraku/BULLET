@@ -1,19 +1,11 @@
 <header class="l-header">
     <div class="l-header__inner">
-        <div class="l-header__logo">
-            <a href="/">
-                <img src="/src/img/common/c-logo.png" alt="BULLET">
-            </a>
-        </div>
+        <div class="l-header__logo"> <a href="/"> <img
+                    src="/src/img/common/c-logo.png" alt="BULLET"> </a> </div>
         <div class="l-header__nav">
-            <div class="c-btn__line">
-                <a href=""></a>
-            </div>
-        </div>
-        <button class="l-header__hamburger js-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <%- include('./src/html/_components/_c-btn-line.ejs') %>
+            <%- include('./src/html/_components/_c-btn-tel.ejs') %>
+        </div> <button class="l-header__hamburger js-hamburger"> <span></span>
+            <span></span> <span></span> </button>
     </div>
 </header>
