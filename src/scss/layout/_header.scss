@@ -1,3 +1,30 @@
 @use "sass:map";
 @use "../global/variables" as v; // 変数を使いたい場合
 @use "../global/mixin" as m; // ミックスインを使いたい場合
+
+.l-header {
+  background-color: v.$color-bg;
+  border-bottom: 1px solid v.$color-border;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: v.$inner-width;
+    margin: 0 auto;
+  }
+
+  &__logo img {
+    width: 155px;
+    height: auto;
+  }
+
+  &__btns {
+    display: none;
+
+    @include m.mq(tb) {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
