@@ -3,6 +3,12 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-contact {
+  max-width: 500px;
+  margin: 0 auto;
+
+  @include m.mq(tb) {
+    max-width: 960px;
+  }
   &__inner {
   }
 
@@ -11,10 +17,16 @@
     z-index: 2;
     background: v.$color-accent-navy;
     border-radius: 20px 20px 0 0;
-    max-width: 240px;
+    width: 240px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: -6px;
+
+    @include m.mq(tb) {
+      border-radius: 30px 30px 0 0;
+      width: 350px;
+      margin-bottom: -24px;
+    }
   }
 
   &__title {
@@ -22,9 +34,18 @@
     font-weight: 700;
     text-align: center;
     font-size: 16px;
+    line-height: 1.4;
+
+    @include m.mq(tb) {
+      font-size: 24px;
+    }
 
     span {
       font-size: 27px;
+
+      @include m.mq(tb) {
+        font-size: 40px;
+      }
     }
   }
 
@@ -33,41 +54,58 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     background-color: v.$color-main;
     border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 
     @include m.mq(tb) {
-      flex-direction: row;
-      justify-content: center;
-      gap: 60px;
     }
   }
 
   &-card {
     border-radius: 30px;
     border: 1px solid v.$color-border;
-    margin: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 18px;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 
     &__title {
       text-align: center;
-      padding: 8px 22px;
+      padding: 8px 20px;
       border-radius: 30px;
       font-weight: 700;
       font-size: 16px;
       background: v.$color-bg;
+
+      @include m.mq(tb) {
+        padding-inline: 60px;
+      }
+
+      br {
+        display: block;
+
+        @include m.mq(tb) {
+          display: none;
+        }
+      }
     }
 
     &__btns {
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      @include m.mq(tb) {
+        flex-direction: row;
+        gap: 50px;
+      }
     }
   }
 }
