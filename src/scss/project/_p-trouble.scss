@@ -1,3 +1,164 @@
 @use "sass:map";
 @use "../global/variables" as v; // 変数を使いたい場合
 @use "../global/mixin" as m; // ミックスインを使いたい場合
+
+.p-trouble {
+  &__inner {
+  }
+
+  &__head {
+    position: relative;
+    z-index: 3;
+    background: v.$color-bg;
+    font-size: 18px; // デザインに合わせて調整
+    font-weight: 700;
+    line-height: 1.8;
+    width: 268px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: -34px;
+    padding-inline: 16px;
+
+    &-icon {
+      width: 40px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: v.$color-text;
+    }
+
+    .title-1 {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 10px;
+    }
+  }
+
+  .u-dot-text {
+    -webkit-text-emphasis: filled circle v.$color-main; // 1文字ずつ上にドットをつける
+    text-emphasis: filled circle v.$color-main;
+
+    /* ドットと文字の間の距離を少し開けたい場合（必要に応じて） */
+    text-emphasis-position: over right;
+  }
+
+  &__body {
+    position: relative;
+    border: 2px solid #333;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  &__container {
+    flex: 1 1 calc(33.333% - 20px);
+    padding-top: 68px;
+    padding-bottom: 86px;
+    position: relative;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    max-width: 268px;
+    margin: 0 auto;
+
+    &-item {
+      display: flex;
+      align-items: start;
+      margin-bottom: 10px;
+
+      img {
+        margin-top: 8px;
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      color: v.$color-text;
+    }
+  }
+
+  &__img {
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__card {
+    color: v.$color-text-white;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+    overflow: hidden;
+
+    &-head {
+      position: relative;
+      z-index: 2;
+      background: v.$color-accent-navy;
+      border-radius: 10px;
+      text-align: center;
+      width: 250px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      margin-bottom: -42px;
+
+      h2 {
+        color: v.$color-text-white;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    &-body {
+      position: relative;
+      z-index: 1;
+      background-color: #feffc2;
+      padding-top: 52px;
+      padding-bottom: 25px;
+
+      h2 {
+        color: v.$color-accent-orange;
+        font-size: 24px;
+        font-weight: 800;
+
+        span {
+          font-size: 28px;
+          font-weight: 800;
+          padding-left: 4px;
+          display: inline-block; // 傾けるために必要です！
+          transform: rotate(10deg); // 10度右に傾ける
+        }
+      }
+
+      h3 {
+        color: v.$color-main;
+        font-size: 20px;
+
+        span {
+          padding-left: 4px;
+          display: inline-block; // 傾けるために必要です！
+          transform: rotate(10deg); // 10度右に傾ける
+        }
+      }
+    }
+  }
+}
