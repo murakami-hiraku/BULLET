@@ -52,7 +52,7 @@
 
   &__body {
     position: relative;
-    border: 2px solid #333;
+    border: 2px solid v.$color-border-black;
     border-radius: 30px;
     overflow: hidden;
   }
@@ -150,7 +150,7 @@
       }
 
       h3 {
-        color: v.$color-main;
+        color: #48ab9e;
         font-size: 20px;
 
         span {
