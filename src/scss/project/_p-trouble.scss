@@ -4,6 +4,10 @@
 
 .p-trouble {
   &__inner {
+    @include m.mq(pc) {
+      max-width: 960px;
+      margin: 0 auto;
+    }
   }
 
   &__head {
@@ -12,17 +16,32 @@
     background: v.$color-bg;
     font-size: 18px; // デザインに合わせて調整
     font-weight: 700;
-    line-height: 1.8;
     width: 268px;
     margin: 0 auto;
     text-align: left;
     margin-bottom: -38px;
     padding-inline: 16px;
 
+    @include m.mq(pc) {
+      font-size: 24px;
+      width: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-inline: 24px;
+    }
+
     &-icon {
       width: 40px;
       margin-bottom: 6px;
       margin-right: 12px;
+
+      @include m.mq(pc) {
+        width: 55px;
+        margin-bottom: -8px;
+        margin-right: 36px;
+      }
 
       img {
         width: 100%;
@@ -30,16 +49,14 @@
       }
     }
 
-    &-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: v.$color-text;
-    }
-
     .title-1 {
       display: flex;
       align-items: end;
       justify-content: start;
+
+      @include m.mq(pc) {
+        padding-right: 94px;
+      }
     }
   }
 
@@ -56,13 +73,28 @@
     border: 2px solid v.$color-border-black;
     border-radius: 30px;
     overflow: hidden;
+    max-width: 450px;
+    margin: 0 auto;
+
+    @include m.mq(tb) {
+      max-width: 600px;
+    }
+
+    @include m.mq(pc) {
+      max-width: 960px;
+
+      border: 5px solid v.$color-border-black;
+    }
   }
 
   &__container {
-    flex: 1 1 calc(33.333% - 20px);
     padding-top: 68px;
     padding-bottom: 86px;
     position: relative;
+
+    @include m.mq(pc) {
+      padding-bottom: 50px;
+    }
   }
 
   &__list {
@@ -70,19 +102,51 @@
     display: flex;
     flex-direction: column;
     gap: 46px;
-    max-width: 268px;
+    max-width: 265px;
     margin: 0 auto;
+
+    @include m.mq(tb) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start; // 左詰めを徹底
+      align-content: flex-start; // 上詰めも徹底
+      gap: 24px;
+      max-width: 554px;
+    }
+
+    @include m.mq(pc) {
+      max-width: 843px;
+    }
 
     &-item {
       display: flex;
-      align-items: start;
-      margin-bottom: 10px;
+      align-items: center;
+      justify-content: start;
+      max-width: 265px;
+      width: 100%;
+      flex-shrink: 0; // 幅が勝手に縮まないように固定
+      height: 80px;
+
+      @include m.mq(pc) {
+        margin: 0;
+
+        &:nth-child(n) {
+          width: 265px;
+        }
+        &:nth-child(5) {
+          margin-right: 265px; /* 1枚分以上のマージンを強制的に作る */
+        }
+        &:nth-child(6) {
+          width: 100%;
+        }
+      }
 
       img {
-        margin-top: 8px;
+        margin-top: 18px;
         margin-right: 10px;
         width: 16px;
         height: 16px;
+        margin-bottom: auto;
       }
     }
 
@@ -99,6 +163,18 @@
     bottom: 0;
     right: 0;
 
+    @include m.mq(tb) {
+      width: 150px;
+      right: 14px;
+      bottom: -40px;
+    }
+
+    @include m.mq(pc) {
+      width: 277px;
+      right: 48px;
+      bottom: -30px;
+    }
+
     img {
       width: 100%;
       height: auto;
@@ -106,7 +182,6 @@
   }
 
   &__card {
-    color: v.$color-text-white;
     border-radius: 0 0 30px 30px;
     text-align: center;
     overflow: hidden;
@@ -117,15 +192,34 @@
       background: v.$color-accent-navy;
       border-radius: 10px;
       text-align: center;
-      width: 250px;
+      max-width: 250px;
       margin: 0 auto;
       padding: 10px 16px;
       margin-bottom: -42px;
+
+      @include m.mq(pc) {
+        max-width: 500px;
+        margin-left: 100px;
+        margin-right: auto;
+        margin-bottom: -10px;
+        padding-block: 2px;
+      }
 
       h2 {
         color: v.$color-text-white;
         font-size: 18px;
         font-weight: 700;
+        width: 100%;
+
+        @include m.mq(pc) {
+          font-size: 20px;
+        }
+
+        br {
+          @include m.mq(pc) {
+            display: none;
+          }
+        }
       }
     }
 
@@ -136,10 +230,19 @@
       padding-top: 52px;
       padding-bottom: 25px;
 
+      @include m.mq(pc) {
+        padding-top: 25px;
+      }
+
       h2 {
         color: v.$color-accent-orange;
         font-size: 24px;
         font-weight: 800;
+
+        @include m.mq(pc) {
+          font-size: 36px;
+          line-height: 1.2;
+        }
 
         span {
           font-size: 28px;
@@ -147,12 +250,26 @@
           padding-left: 4px;
           display: inline-block; // 傾けるために必要です！
           transform: rotate(10deg); // 10度右に傾ける
+
+          @include m.mq(pc) {
+            font-size: 40px;
+          }
         }
       }
 
       h3 {
         color: #48ab9e;
         font-size: 20px;
+
+        @include m.mq(pc) {
+          font-size: 28px;
+        }
+
+        br {
+          @include m.mq(pc) {
+            display: none;
+          }
+        }
 
         span {
           padding-left: 4px;
