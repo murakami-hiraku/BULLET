@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
+import FullReload from "vite-plugin-full-reload";
 import path from "path";
 
 export default defineConfig({
@@ -31,11 +32,15 @@ export default defineConfig({
   },
 
   // 4. プラグイン設定
-  plugins: [ViteEjsPlugin()],
+  plugins: [ViteEjsPlugin(), FullReload(["src/**/*.ejs"])],
 
   // 5. 開発サーバーの設定
   server: {
     open: true, // 実行時に自動でブラウザを開く
+    // EJSの変更を検知しやすくするための設定
+    watch: {
+      usePolling: true,
+    },
   },
 
   // 6. ビルド後の整理（任意）

@@ -1,3 +1,2 @@
-import "./scss/style.scss";
-
-console.log("Vite + SCSS 起動完了！");
+// src/main.js
+import "@/scss/style.scss"; // 自分のメインSCSSのパス
