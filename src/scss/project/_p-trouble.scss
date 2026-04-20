@@ -4,6 +4,7 @@
 
 .p-trouble {
   &__inner {
+    padding-inline: 15px;
     @include m.mq(pc) {
       max-width: 960px;
       margin: 0 auto;
