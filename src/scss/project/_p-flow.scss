@@ -159,10 +159,8 @@
     }
     @media screen and (min-width: 1280px) {
       // PC（右向き三角）
-      clip-path: polygon(20% 0, 20% 100%, 100% 50%);
       width: 60px;
       height: 100px;
-      margin-top: 70px;
       margin-left: 60px;
     }
   }
