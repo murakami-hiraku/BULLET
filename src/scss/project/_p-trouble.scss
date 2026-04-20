@@ -106,17 +106,13 @@
     max-width: 268px;
     margin: 0 auto;
 
-    @include m.mq(tb) {
+    @include m.mq(pc) {
+      max-width: 843px;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-start; // 左詰めを徹底
       align-content: flex-start; // 上詰めも徹底
       gap: 24px;
-      max-width: 554px;
-    }
-
-    @include m.mq(pc) {
-      max-width: 843px;
     }
 
     &-item {
