@@ -1,41 +1,43 @@
 <!-- リストのテキストを配列で定義 -->
-<% const troubleTexts = ["サイドリフトが故障して、<br>修理に何週間もかかった。", "大型車だからぶつけてしまい、<br>修理費が高くついた。", "修理中の代車がなく、<br>利用者さんの送迎に支障が出た。", "リフトや架装部分は<br>メンテナンス対象外と言われた。", "車検・税金・修理費…<br>突発的な出費で圧迫している。", "サイドリフトが故障して、<br>修理に何週間もかかった。", ]; %>
+<% const troubleTexts = [
+  "サイドリフトが故障して、<br>修理に何週間もかかった。",
+  "大型車だからぶつけてしまい、<br>修理費が高くついた。",
+  "修理中の代車がなく、<br>利用者さんの送迎に支障が出た。",
+  "リフトや架装部分は<br>メンテナンス対象外と言われた。",
+  "車検・税金・修理費…<br>突発的な出費で圧迫している。",
+  "サイドリフトが故障して、<br>修理に何週間もかかった。",
+  ]; %>
 <!-- リストのテキストを配列で定義 -->
+
 <section class="p-trouble l-section">
-    <div class="p-trouble__inner">
-        <div class="p-trouble__head">
-            <p class="p-trouble__head-title title-1"> <span
-                    class="p-trouble__head-icon"> <img
-                        src="/src/img/project/p-trouble-img-1.png"
-                        alt=""></span> <span class="u-dot-text">福祉介護車両</span>で
-            </p>
-            <p class="p-trouble__head-title title-2"> こんなお悩みありませんか？</p>
-        </div>
-        <div class="p-trouble__body">
-            <div class="p-trouble__container">
-                <ul class="p-trouble__list">
-                    <% troubleTexts.forEach((text) => { %>
-                    <li class="p-trouble__list-item"> <img
-                            src="/src/img/common/c-check-icon.png"
-                            alt="チェックマークのアイコン">
-                        <p class="p-trouble__list-text">
-                            <%- text %>
-                        </p>
-                    </li>
-                    <% }); %>
-                </ul>
-                <div class="p-trouble__img"><img
-                        src="/src/img/project/p-trouble-img-2.png" alt=""></div>
-            </div>
-            <div class="p-trouble__card">
-                <div class="p-trouble__card-head">
-                    <h2>北海道札幌市の拠点にした<br>BULLETリースが</h2>
-                </div>
-                <div class="p-trouble__card-body">
-                    <h2>全て解決<span>!!</span></h2>
-                    <h3>介護車両リース・レンタルで<br> 安心送迎と負担軽減を実現<span>!!</span></h3>
-                </div>
-            </div>
-        </div>
+  <div class="p-trouble__inner">
+    <div class="p-trouble__head">
+      <p class="p-trouble__head-title title-1"> <span class="p-trouble__head-icon"> <img src="/src/img/project/p-trouble-img-1.png" alt=""></span> <span class="u-dot-text">福祉介護車両</span>で
+      </p>
+      <p class="p-trouble__head-title title-2"> こんなお悩みありませんか？</p>
     </div>
+    <div class="p-trouble__body">
+      <div class="p-trouble__container">
+        <ul class="p-trouble__list">
+          <% troubleTexts.forEach((text) => { %>
+          <li class="p-trouble__list-item"> <img src="/src/img/common/c-check-icon.png" alt="チェックマークのアイコン">
+            <p class="p-trouble__list-text">
+              <%- text %>
+            </p>
+          </li>
+          <% }); %>
+        </ul>
+        <div class="p-trouble__img"><img src="/src/img/project/p-trouble-img-2.png" alt=""></div>
+      </div>
+      <div class="p-trouble__card">
+        <div class="p-trouble__card-head">
+          <h2>北海道札幌市の拠点にした<br>BULLETリースが</h2>
+        </div>
+        <div class="p-trouble__card-body">
+          <h2>全て解決<span>!!</span></h2>
+          <h3>介護車両リース・レンタルで<br> 安心送迎と負担軽減を実現<span>!!</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
