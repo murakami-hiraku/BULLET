@@ -1,9 +1,56 @@
+<%
+const advantageData = [
+  { label: "運営母体", bullet: "修理工場", companyA: "リース会社", companyB: "中古車販売店" },
+  { label: "リフト・架装部の修理", bullet: "自社工場で即対応", companyA: "メンテナンス対象外", companyB: "ディーラー送り（数週間）" },
+  { label: "ボディ修理（キズ・ヘコミ）", bullet: "自社工場で即対応", companyA: "外部修理工場へ委託", companyB: "外部修理工場へ委託" },
+  { label: "代車", bullet: "無料", companyA: "なし or 有料", companyB: "なし or 有料" },
+  { label: "経年劣化による修理", bullet: "無料", companyA: "故障内容による", companyB: "故障内容による" }
+];
+%>
+
+
+
+
+
 <section class="p-advantage">
   <div class="p-advantage__inner">
     <div class="p-advantage__head">
+      <h3 class="p-advantage__title--sub">北海道札幌市の拠点にしたBULLETリースが</h3>
       <h2 class="p-advantage__title">BULLETリースが全て解決します。</h2>
     </div>
     <div class="p-advantage__body">
+      <div class="p-advantage__card">
+        <div class="p-advantage__card-img">
+          <img src="" alt="">
+        </div>
 
+        <div class="p-advantage__card-text">
+          <p>BULLETリースは、修理工場が直接運営する介護車両リースです。
+            一般のリース会社では「対象外」と言われがちなリフトや架装部分の故障にも、自社工場のスタッフが即日対応。
+            大型車ならではのキズ・ヘコミも、外注に出さずスピード修理が可能です。
+            もちろん修理中の代車は無料でご用意。利用者さんの送迎が止まることはありません。</p>
+        </div>
+      </div>
+      <table class="p-advantage__table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="is-bullet">BULLETリース</th>
+            <th>A社（大手リース）</th>
+            <th>B社（福祉車両専門）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% advantageData.forEach(row => { %>
+          <tr>
+            <th><%= row.label %></th>
+            <td class="is-bullet"><%= row.bullet %></td>
+            <td><%= row.companyA %></td>
+            <td><%= row.companyB %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
     </div>
+  </div>
 </section>
