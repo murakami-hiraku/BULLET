@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LPのタイトル</title>
-    <meta name="description" content="LPの説明文をここに記述します。" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LPのタイトル</title>
+  <meta name="description" content="LPの説明文をここに記述します。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <%- include('./src/html/_layout/_header.ejs') %>
-    <main>
-        <%- include('./src/html/_project/_p-mv.ejs') %>
-        <%- include('./src/html/_project/_p-contact.ejs') %>
-        <%- include('./src/html/_project/_p-trouble.ejs') %>
-        <%- include('./src/html/_project/_p-contact.ejs') %>
-        <%- include('./src/html/_project/_p-flow.ejs') %>
-    </main>
-    <%- include('./src/html/_layout/_footer.ejs') %>
-    <script type="module" src="/src/main.js"></script>
+  <%- include('./src/html/_layout/_header.ejs') %>
+  <main>
+    <%- include('./src/html/_project/_p-mv.ejs') %>
+    <%- include('./src/html/_project/_p-contact.ejs') %>
+    <%- include('./src/html/_project/_p-trouble.ejs') %>
+    <%- include('./src/html/_project/_p-contact.ejs') %>
+    <%- include('./src/html/_project/_p-advantage.ejs') %>
+    <%- include('./src/html/_project/_p-contact.ejs') %>
+    <%- include('./src/html/_project/_p-flow.ejs') %>
+  </main>
+  <%- include('./src/html/_layout/_footer.ejs') %>
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
