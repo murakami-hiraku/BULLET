@@ -3,5 +3,156 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-advantage {
-  background-color: v.$color-bg;
+  background: #cdf0ed;
+  padding-bottom: 124px;
+
+  &__inner {
+    padding-inline: 15px;
+  }
+
+  &__head {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-size: 20px;
+    &--sub {
+      background: #19b8b1;
+      color: v.$color-text-white;
+      padding: 8px 16px;
+      border-radius: 10px;
+    }
+  }
+  &__body {
+    margin-top: 20px;
+  }
+  &__card {
+    &-head {
+      position: relative;
+      z-index: 2;
+      margin-bottom: -52px;
+    }
+    &-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 100px;
+    }
+    &-img {
+    }
+    &-body {
+      position: relative;
+      z-index: 2;
+      background: v.$color-bg;
+      border-radius: 30px;
+      padding: 12px 8px;
+    }
+    &-text {
+      border: 1px solid #19b8b1;
+      border-radius: 30px;
+      padding: 15px 7px;
+    }
+  }
+
+  &__table-wrapper {
+    margin-top: 38px;
+    overflow-x: auto; // スマホではみ出した時に横スクロールさせる
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+
+    // --- Google Chrome, Safari, Edge 用 ---
+    &::-webkit-scrollbar {
+      height: 5px; // スクロールバーの高さ（横スクロールの場合）
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #d9d9d9; // バーが通る道の背景色
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: v.$color-accent-blue; // 動くツマミ部分の色
+      border-radius: 10px;
+    }
+
+    // --- Firefox 用 ---
+    scrollbar-width: thin; // バーを細くする
+    scrollbar-color: v.$color-accent-blue #d9d9d9; // ツマミの色 道の色
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; // 列の幅を固定しやすくする
+    min-width: 1080px; // スマホでも表の形を維持する最低幅
+    max-width: 1080px; // PCでは表が広がりすぎないように最大幅を設定
+    margin: 0 auto; // PCでは表を中央に配置
+
+    th,
+    td {
+      width: 270px !important;
+      height: 50px;
+      border: 1px solid #d9d9d9; // 薄いグレー
+      background: v.$color-bg;
+      padding: 10px 15px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 1.5;
+
+      @include m.mq(pc) {
+        font-size: 16px;
+      }
+    }
+
+    thead {
+      th {
+        border-color: #fff;
+      }
+      tr {
+        // 1列目（空のセル）
+        th:nth-child(1) {
+          background-color: #a8a8a8;
+        }
+      }
+    }
+
+    // 左端の項目名列
+    thead th:first-child,
+    tbody th {
+      text-align: left;
+    }
+
+    // ヘッダー（1行目）
+    thead th {
+      background-color: #bdf1ec; // A社B社の上の薄い青
+      font-weight: 700;
+
+      // Bulletリースの列
+      &.is-bullet {
+        background-color: v.$color-accent-blue; // 濃い紺色
+        color: v.$color-text-white;
+      }
+    }
+    // Bulletリースの列
+    // ボディ（2行目以降）
+    tbody td {
+      &.is-bullet {
+        color: v.$color-accent-blue;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .p-advantage__row-spacer {
+    height: 4px; // 行の間のスペース
+    td {
+      height: 4px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+  }
 }
