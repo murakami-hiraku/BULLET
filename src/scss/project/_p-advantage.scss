@@ -18,27 +18,63 @@
   &__title {
     margin-top: 12px;
     font-size: 20px;
+
+    @include m.mq(tb) {
+      font-size: 32px;
+    }
+
     &--sub {
       background: #19b8b1;
       color: v.$color-text-white;
       padding: 8px 16px;
       border-radius: 10px;
+
+      @include m.mq(tb) {
+        font-size: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
     }
   }
   &__body {
     margin-top: 20px;
+
+    @include m.mq(pc) {
+      margin-top: 40px;
+    }
   }
   &__card {
+    @include m.mq(pc) {
+      max-width: calc(1080px + 102px);
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding-left: 102px;
+    }
     &-head {
       position: relative;
       z-index: 2;
       margin-bottom: -52px;
+
+      @include m.mq(pc) {
+        margin: 0;
+        margin-left: -52px;
+        width: 28.44vw;
+      }
     }
     &-logo {
       position: absolute;
       top: 10px;
       right: 10px;
       width: 100px;
+
+      @include m.mq(pc) {
+        top: 20px;
+        right: 20px;
+        width: 155px;
+      }
     }
     &-img {
     }
@@ -48,11 +84,23 @@
       background: v.$color-bg;
       border-radius: 30px;
       padding: 12px 8px;
+
+      @include m.mq(pc) {
+        min-width: 572px;
+        max-width: 572px;
+        height: 290px;
+        margin-block: 46px;
+      }
     }
     &-text {
       border: 1px solid #19b8b1;
       border-radius: 30px;
       padding: 15px 7px;
+
+      @include m.mq(pc) {
+        height: 100%;
+        font-size: 18px;
+      }
     }
   }
 
@@ -61,6 +109,10 @@
     overflow-x: auto; // スマホではみ出した時に横スクロールさせる
     -webkit-overflow-scrolling: touch;
     padding-bottom: 15px;
+
+    @include m.mq(pc) {
+      margin-top: 50px;
+    }
 
     // --- Google Chrome, Safari, Edge 用 ---
     &::-webkit-scrollbar {
