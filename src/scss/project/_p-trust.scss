@@ -3,7 +3,227 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-trust {
-  h1 {
-    color: rgb(0, 81, 255);
+  background: v.$color-bg;
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+  @include m.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__inner {
+    padding-inline: 15px;
+
+    @include m.mq(pc) {
+      padding: 0;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+  }
+
+  &__head {
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-size: 20px;
+
+    @include m.mq(tb) {
+      font-size: 32px;
+    }
+
+    &--sub {
+      background: v.$color-accent-blue;
+      color: v.$color-text-white;
+      padding: 8px 18px;
+      width: fit-content;
+      margin: 0 auto;
+
+      @include m.mq(tb) {
+        font-size: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__body {
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include m.mq(pc) {
+      margin-top: 0;
+      max-width: 960px;
+    }
+  }
+  &__card {
+    @include m.mq(pc) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    &-head {
+      position: relative;
+      z-index: 2;
+      margin-bottom: -52px;
+      max-width: 600px;
+      margin-inline: auto;
+      @include m.mq(pc) {
+        margin: 0;
+
+        max-width: 441px;
+        width: 28.44vw;
+        min-width: 350px;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: auto;
+    }
+    &-body {
+      position: relative;
+      z-index: 2;
+      background: v.$color-main;
+      border-radius: 30px;
+      padding: 12px 8px;
+      max-width: 520px;
+      margin: 0 auto;
+
+      @include m.mq(pc) {
+        margin: 0;
+        margin-left: clamp(-52px, -2.7083vw, 0px);
+
+        min-width: 572px;
+        max-width: 572px;
+        width: 29.791vw;
+        height: 290px;
+        margin-block: 46px;
+      }
+    }
+    &-text {
+      border: 1px solid v.$color-border-white;
+      color: v.$color-text-white;
+      border-radius: 30px;
+      padding: 15px 7px;
+
+      @include m.mq(pc) {
+        height: 100%;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__foot {
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include m.mq(tb) {
+      margin-top: 40px;
+    }
+
+    @include m.mq(pc) {
+      max-width: 1080px;
+    }
+
+    &-img {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      @include m.mq(tb) {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      img {
+        &:first-child {
+          width: 56px;
+        }
+        &:last-child {
+          width: 56px;
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          left: 18%;
+          bottom: 30px;
+          width: 89px;
+          aspect-ratio: 166 / 50;
+          object-fit: cover;
+
+          @include m.mq(pc) {
+            position: relative;
+
+            left: auto;
+            bottom: auto;
+            width: 166px;
+          }
+        }
+        &:nth-child(3) {
+          position: absolute;
+          left: calc(50% - 51px);
+          top: 28px;
+          width: 102px;
+          aspect-ratio: 190 / 57;
+          object-fit: cover;
+
+          @include m.mq(pc) {
+            position: relative;
+
+            left: auto;
+            top: auto;
+            width: 190px;
+          }
+        }
+        &:nth-child(4) {
+          position: absolute;
+          right: 18%;
+          bottom: 30px;
+          width: 84px;
+          aspect-ratio: 156 / 51;
+          object-fit: cover;
+
+          @include m.mq(pc) {
+            position: relative;
+
+            right: auto;
+            bottom: auto;
+            width: 156px;
+          }
+        }
+      }
+    }
+
+    &-text {
+      margin-top: 20px;
+      text-align: center;
+
+      @include m.mq(pc) {
+        font-size: 20px;
+      }
+
+      span {
+        color: v.$color-accent-orange;
+        font-size: 19px;
+
+        @include m.mq(pc) {
+          font-size: 24px;
+        }
+      }
+
+      br {
+        @include m.mq(pc) {
+          display: none;
+        }
+      }
+    }
   }
 }
