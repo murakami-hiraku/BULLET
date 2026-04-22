@@ -9,6 +9,12 @@
 
   &__inner {
     padding-inline: 15px;
+
+    @include m.mq(pc) {
+      padding: 0;
+      max-width: 1172px;
+      margin: 0 auto;
+    }
   }
 
   &__head {
@@ -47,16 +53,12 @@
   }
   &__card {
     @include m.mq(pc) {
-      max-width: calc(1080px + 102px);
+      max-width: calc(960px + 102px);
       display: flex;
       flex-direction: row-reverse;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
-      margin: 0 auto;
-    }
-
-    @include m.mq(lg) {
-      padding-left: clamp(0px, 5.3125vw, 102px);
+      margin-left: clamp(0px, 5.3125vw, 102px);
     }
 
     &-head {
@@ -71,7 +73,7 @@
 
         max-width: 546px;
         width: 28.44vw;
-        min-width: 450px;
+        min-width: 425px;
       }
     }
     &-logo {

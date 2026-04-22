@@ -11,6 +11,12 @@
   }
   &__inner {
     padding-inline: 15px;
+
+    @include m.mq(pc) {
+      padding: 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
   }
 
   &__head {
