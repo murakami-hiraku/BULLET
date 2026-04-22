@@ -51,17 +51,25 @@
       justify-content: center;
       align-items: center;
       margin: 0 auto;
-      padding-left: 102px;
     }
+
+    @include m.mq(lg) {
+      padding-left: clamp(0px, 5.3125vw, 102px);
+    }
+
     &-head {
       position: relative;
       z-index: 2;
       margin-bottom: -52px;
-
+      max-width: 600px;
+      margin-inline: auto;
       @include m.mq(pc) {
         margin: 0;
-        margin-left: -52px;
+        margin-left: clamp(-52px, -2.7083vw, 0px);
+
+        max-width: 546px;
         width: 28.44vw;
+        min-width: 450px;
       }
     }
     &-logo {
@@ -77,6 +85,8 @@
       }
     }
     &-img {
+      width: 100%;
+      height: auto;
     }
     &-body {
       position: relative;
@@ -84,10 +94,14 @@
       background: v.$color-bg;
       border-radius: 30px;
       padding: 12px 8px;
+      max-width: 520px;
+      margin: 0 auto;
 
       @include m.mq(pc) {
+        margin: 0;
         min-width: 572px;
         max-width: 572px;
+        width: 29.791vw;
         height: 290px;
         margin-block: 46px;
       }
