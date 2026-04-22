@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../global/variables" as v; // 変数を使いたい場合
+@use "../global/mixin" as m; // ミックスインを使いたい場合
+
+.p-trust {
+  h1 {
+    color: rgb(0, 81, 255);
+  }
+}
