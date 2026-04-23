@@ -1,3 +1,61 @@
+<%
+const reasonData = [
+  {
+    title: "リフト・架装部の修理も自社工場で即対応",
+    text: "介護車両で最も壊れやすいサイドリフト。一般のリース会社ではメンテナンス対象外とされることが多いですが、BULLETリースなら自社修理工場で即日対応が可能です。ディーラーへの外注待ちで何週間も送迎が止まる心配はありません。",
+    img: "/src/img/project/p-reason-img-1.png",
+    alt: "自社工場のスタッフが修理している様子"
+  },
+  {
+    title: "大型車のぶつけキズ・ヘコミもスピード修理",
+    text: "ハイエースなどの大型介護車両は、住宅街の狭い道やデイサービスの駐車場での接触が日常茶飯事。修理工場直営だからこそ、軽微なキズ・ヘコミは迅速かつ低コストで対応。外注費用の上乗せもありません。",
+    img: "/src/img/project/p-reason-img-2.png",
+    alt: "無料貸出の福祉車両"
+  },
+  {
+    title: "修理中の代車は無料でご用意",
+    text: "利用者さんの送迎は一日たりとも止められません。BULLETリースでは、修理中の代車を無料でご用意。お客様の送迎業務が中断するリスクをゼロにします。",
+    img: "/src/img/project/p-reason-img-3.png",
+    alt: "板金修理の様子"
+  },
+  {
+    title: "車検・税金・経年劣化の修理もコミコミ定額",
+    text: "月々のリース料に車検・税金・経年劣化による修理費用がすべて含まれています。突発的な出費がないため、事業の資金計画が立てやすく、安定した施設経営を支えます。",
+    img: "/src/img/project/p-reason-img-4.png",
+    alt: "笑顔で対応するスタッフ"
+  }
+];
+%>
+
 <section class="p-reason">
-  <h1>test</h1>
+  <div class="p-reason__inner">
+    <div class="p-reason__head">
+      <h4 class="p-reason__title--sub">BULLETリースが</h4>
+      <h2 class="p-reason__title">選ばれる４つの理由</h2>
+    </div>
+    <div class="p-reason__body">
+      <div class="p-reason__cards">
+        <% reasonData.forEach((item, index) => { %>
+        <%# 1 -> 01, 2 -> 02 と変換する処理 %>
+        <% const rowNumber = (index + 1).toString().padStart(2, '0'); %>
+
+        <div class="p-reason__card">
+          <div class="p-reason__card-head">
+            <span class="p-reason__card-number">Point<%= rowNumber %></span>
+            <img class="p-reason__card-img" src="<%= item.img %>" alt="<%= item.alt %>">
+          </div>
+
+          <div class="p-reason__card-body">
+            <h3 class="p-reason__card-title">
+              <%= item.title %>
+            </h3>
+            <p class="p-reason__card-text">
+              <%= item.text %>
+            </p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
 </section>
