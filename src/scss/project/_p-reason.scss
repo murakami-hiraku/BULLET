@@ -3,8 +3,147 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-reason {
-  h1 {
-    color: red;
-    font-size: 100px;
+  padding-top: 35px;
+  padding-bottom: 55px;
+  &__inner {
+    padding-inline: 15px;
+  }
+
+  &__head {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 28px;
+    margin-top: 4px;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 3px;
+
+      // ボックスの見た目
+      width: 34px; // ボックスの幅
+      height: 34px; // ボックスの高さ
+      background-color: v.$color-accent-blue; // 背景色
+      color: v.$color-text-white; // 文字色
+
+      // 枠線だけにしたい場合
+      // border: 2px solid v.$color-main;
+      // color: v.$color-main;
+    }
+
+    &--sub {
+      font-size: 20px;
+    }
+  }
+
+  &__body {
+    margin-top: 42px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__card {
+    padding-bottom: 36px;
+
+    // 奇数番目のカード（1枚目、3枚目）
+    &:nth-child(odd) {
+      .p-reason__card-head {
+        margin-left: auto; // 右寄せ
+      }
+      .p-reason__card-number {
+        top: -38px;
+        right: -15px;
+        transform: rotate(5deg);
+      }
+      .p-reason__card-img {
+        transform: translate(-14px, -14px);
+      }
+    }
+
+    // 偶数番目のカード（2枚目、4枚目）
+    &:nth-child(even) {
+      .p-reason__card-head {
+        margin-right: auto; // 左寄せ
+      }
+      .p-reason__card-number {
+        top: -38px;
+        left: 0;
+        transform: rotate(-5deg);
+      }
+
+      .p-reason__card-img {
+        transform: translate(14px, -14px);
+      }
+    }
+
+    &-head {
+      position: relative;
+      width: 88.718vw;
+      margin-top: 14px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px solid v.$color-sub-light;
+        border-radius: 20px;
+        z-index: 10; // ★画像（z-index: 1）より大きくする
+        pointer-events: none; // 枠がクリックの邪魔をしないように
+      }
+    }
+
+    &-number {
+      position: absolute;
+      z-index: 10;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1;
+      color: v.$color-sub-light;
+    }
+    &-img {
+      display: block; // 下に隙間ができないように
+      position: relative;
+      z-index: 1; // ★枠の ::before より小さくする
+      width: 100%; // 親（head）の幅に合わせる
+      height: auto;
+      border-radius: 20px; // 画像自体も角丸にする
+    }
+    &-body {
+      margin-top: 54px;
+    }
+
+    &-title {
+      letter-spacing: 0.1em;
+      font-size: 32px;
+      color: v.$color-text-orange;
+
+      // マーカーを引くためのスタイル
+      // 改行したときも綺麗に見えるように inline 指定にする
+      display: inline;
+
+      // マーカーの設定
+      // transparent 70% くらいの数値にすると、文字の下側に細めにラインが入ります
+      background: linear-gradient(transparent 70%, v.$color-sub-light 70%);
+
+      // 線を文字の横幅より少し広げたい場合はこれを入れる
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      padding: 0 4px;
+    }
+
+    &-text {
+      margin-top: 20px;
+      letter-spacing: 0.1em;
+    }
   }
 }
