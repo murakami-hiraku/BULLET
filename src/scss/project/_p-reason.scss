@@ -5,8 +5,25 @@
 .p-reason {
   padding-top: 35px;
   padding-bottom: 55px;
+
+  @include m.mq(pc) {
+    padding-top: 90px;
+    padding-bottom: 138px;
+  }
   &__inner {
     padding-inline: 15px;
+    padding-inline: 6.846vw;
+
+    @include m.mq(tb) {
+      padding-inline: 20px;
+      padding-inline: 2.604vw;
+      max-width: 1284px;
+      margin: 0 auto;
+    }
+
+    @include m.mq(xl) {
+      padding-inline: 0;
+    }
   }
 
   &__head {
@@ -16,6 +33,10 @@
   &__title {
     font-size: 28px;
     margin-top: 4px;
+
+    @include m.mq(pc) {
+      margin-top: 24px;
+    }
 
     span {
       display: inline-flex;
@@ -32,38 +53,91 @@
       // 枠線だけにしたい場合
       // border: 2px solid v.$color-main;
       // color: v.$color-main;
+
+      @include m.mq(pc) {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+      }
     }
 
     &--sub {
       font-size: 20px;
+
+      @include m.mq(pc) {
+        font-size: 32px;
+      }
     }
   }
 
   &__body {
     margin-top: 42px;
+
+    @include m.mq(pc) {
+      margin-top: 136px;
+    }
   }
 
   &__cards {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    justify-content: center;
+
+    @include m.mq(tb) {
+      gap: clamp(60px, 10.416vw, 200px);
+    }
   }
 
   &__card {
-    padding-bottom: 36px;
+    @include m.mq(tb) {
+      display: flex;
+      gap: 60px;
+      gap: clamp(0px, 3.125vw, 60px);
+      align-items: center;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse; // 偶数番目のカードは画像を右側にする
+      }
+    }
+
+    @include m.mq(pc) {
+      gap: 80px;
+    }
 
     // 奇数番目のカード（1枚目、3枚目）
     &:nth-child(odd) {
       .p-reason__card-head {
         margin-left: auto; // 右寄せ
+
+        @include m.mq(tb) {
+          margin-left: 0;
+        }
       }
       .p-reason__card-number {
         top: -38px;
         right: -15px;
         transform: rotate(5deg);
+
+        @include m.mq(pc) {
+          top: -96px;
+          right: -60px;
+        }
       }
       .p-reason__card-img {
         transform: translate(-14px, -14px);
+
+        @include m.mq(tb) {
+          transform: translate(-20px, -20px);
+        }
+      }
+
+      .p-reason__card-body {
+        margin-left: auto; // 右寄せ
+
+        @include m.mq(tb) {
+          margin-left: 0;
+        }
       }
     }
 
@@ -71,22 +145,61 @@
     &:nth-child(even) {
       .p-reason__card-head {
         margin-right: auto; // 左寄せ
+
+        @include m.mq(tb) {
+          margin-right: 0;
+        }
       }
       .p-reason__card-number {
         top: -38px;
         left: 0;
         transform: rotate(-5deg);
+
+        @include m.mq(pc) {
+          top: -96px;
+          left: -60px;
+        }
       }
 
       .p-reason__card-img {
         transform: translate(14px, -14px);
+
+        @include m.mq(tb) {
+          transform: translate(20px, -20px);
+        }
+      }
+
+      .p-reason__card-body {
+        margin-right: auto; // 左寄せ
+
+        @include m.mq(tb) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .p-reason__card-title {
+        br {
+          @media screen and (min-width: 420px) {
+            display: none;
+          }
+        }
       }
     }
 
     &-head {
       position: relative;
       width: 88.718vw;
+      max-width: 500px;
       margin-top: 14px;
+
+      @include m.mq(tb) {
+        width: auto;
+        max-height: 284px;
+        flex: 1;
+        margin-top: 20px;
+      }
 
       &::before {
         content: "";
@@ -109,6 +222,14 @@
       font-weight: 400;
       line-height: 1;
       color: v.$color-sub-light;
+
+      @include m.mq(tb) {
+        font-size: 64px;
+      }
+
+      @include m.mq(pc) {
+        font-size: 96px;
+      }
     }
     &-img {
       display: block; // 下に隙間ができないように
@@ -120,11 +241,18 @@
     }
     &-body {
       margin-top: 54px;
+      max-width: 500px;
+
+      @include m.mq(tb) {
+        max-width: 475px;
+        flex: 1;
+        margin-top: 0;
+      }
     }
 
     &-title {
       letter-spacing: 0.1em;
-      font-size: 32px;
+      font-size: 24px;
       color: v.$color-text-orange;
 
       // マーカーを引くためのスタイル
@@ -139,6 +267,10 @@
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
       padding: 0 4px;
+
+      @include m.mq(pc) {
+        font-size: 32px;
+      }
     }
 
     &-text {
