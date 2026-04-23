@@ -28,6 +28,11 @@
 
   &__head {
     text-align: center;
+    margin-inline: -6.846vw;
+
+    @include m.mq(tb) {
+      margin-inline: 0;
+    }
   }
 
   &__title {
