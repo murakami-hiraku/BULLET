@@ -3,5 +3,99 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-voice {
-  color: red;
+  padding: 64px 0 84px;
+
+  &__inner {
+    padding-inline: 15px;
+  }
+
+  &__head {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 60px;
+
+    &::before {
+      content: "VOICE";
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 64px;
+      color: v.$color-bg-blue;
+      pointer-events: none;
+    }
+  }
+
+  &__body {
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__card {
+    padding: 20px;
+    background: v.$color-main;
+    color: v.$color-text-white;
+
+    &-head {
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 300 / 250;
+      object-fit: cover;
+    }
+
+    &-body {
+    }
+
+    &-stars {
+      display: flex;
+      gap: 8px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+
+    &-star {
+      width: 35px;
+      height: 34px;
+      line-height: 1;
+      fill: #d3d3d3;
+
+      &.is-active {
+        fill: #fdc700; // 評価済みの色
+      }
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    &-reason {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    &-text {
+      margin-top: 15px;
+    }
+
+    &-name {
+      display: block;
+      margin-top: 11px;
+      font-size: 14px;
+      text-align: right;
+    }
+  }
 }
