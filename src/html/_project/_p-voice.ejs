@@ -1,0 +1,73 @@
+<%
+const voiceData = [
+  {
+    starCount: 5,
+    img: "p-voice-img-1.png",
+    title: "ご家族の通院送迎",
+    reason: "代車無料で安心",
+    text: "母の通院に使っています。車検や税金込みで月額が明確なので助かります。故障時も代車を出してくれるので予定が狂わず安心です。",
+    name: "60代 男性",
+  },
+  {
+    starCount: 5,
+    img: "p-voice-img-2.png",
+    title: "デイサービス送迎",
+    reason: "修理が早い",
+    text: "送迎車両として3台リースしています。修理工場が母体なので、不具合があってもすぐに対応してもらえて助かっています。",
+    name: "介護事業所 担当者様",
+  },
+  {
+    starCount: 4,
+    img: "p-voice-img-3.png",
+    title: "リハビリ通所",
+    reason: "短期契約できた",
+    text: "退院後のリハビリ期間だけ利用したいと相談したら、6ヶ月の短期契約ができました。購入するより経済的で助かりました。",
+    name: "50代 女性",
+  },
+];
+%>
+
+
+
+<section class="p-voice">
+  <div class="p-voice__inner">
+    <div class="p-voice__head">
+      <h2 class="p-voice__title">
+        ご利用者の声
+      </h2>
+    </div>
+    <div class="p-voice__body">
+      <div class="p-voice__cards">
+
+        <%# ★ここからループ開始 %>
+        <% voiceData.forEach((item) => { %>
+        <div class="p-voice__card">
+          <div class="p-voice__card-head">
+            <%# 画像パスもデータから取得 %>
+            <img class="p-voice__card-img" src="/src/img/project/<%= item.img %>" alt="<%= item.name %>のイメージ画像">
+          </div>
+
+          <div class="p-voice__card-body">
+            <div class="p-voice__stars" aria-label="評価: <%= item.starCount %> / 5">
+              <% for (let i = 0; i < 5; i++) { %>
+              <span class="p-voice__star <%= i < item.starCount ? 'is-active' : '' %>" aria-hidden="true">★</span>
+              <% } %>
+            </div>
+            <h3 class="p-voice__card-title">
+              <%= item.title %>
+            </h3>
+            <p class="p-voice__card-reason">選ばれた理由：<%= item.reason %></p>
+            <div class="p-voice__card-text">
+              <p>「<%= item.text %>」</p>
+              <%# 先ほど話した small タグですね！ %>
+              <small><%= item.name %></small>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+        <%# ★ここまでループ %>
+
+      </div>
+    </div>
+  </div>
+</section>
