@@ -10,7 +10,7 @@
 // カード4
 {step: "税金無料"},
 // カード5
-{step: "劣化修理無料"},
+{step: "劣化修理<br>無料"},
 ]; %>
 
 
@@ -28,23 +28,24 @@
         <h1 class="ttl-1">ぶつける。壊れる。直らない。</h1>
         <h2 class="ttl-2"><%# 「介護車両」を一文字ずつの配列にしてループさせる %>
           <% "介護車両".split('').forEach(char => { %>
-          <span><%= char %></span>
+          <span class="is-accent"><%= char %></span>
           <% }); %>
-          の困った、
+          <span class="is-normal">の困った、</span>
         </h2>
-        <h3 class="ttl-3">だから、リフト故障も<span>即日対応</span>。</h3>
-        <h3 class="ttl-4">ぶつけキズも<span>翌日修理</span>。代車は<span>無料</span>。</h3>
+        <h2 class="ttl-3">終わらせます。</h2>
+        <h3 class="ttl-4">だから、リフト故障も<span>即日対応</span>。</h3>
+        <h3 class="ttl-5">ぶつけキズも<span>翌日修理</span>。代車は<span>無料</span>。</h3>
       </div>
 
       <div class="p-fv__step">
         <ul class="p-fv__step-container">
           <% fvSteps.forEach((item, index) => { %>
           <li class="p-fv__step-item">
-            <h4><%= item.step %></h4>
+            <h4><%- item.step %></h4>
 
             <%# 最後の要素以外に矢印を表示する %>
             <% if (index < fvSteps.length - 1) { %>
-            <div class="p-fv__step-arrow"></div>
+            <div class="p-fv__step-icon"></div>
             <% } %>
           </li>
           <% }); %>
@@ -53,8 +54,14 @@
     </div>
 
     <div class="p-fv__img">
-      <img src="/src/img/project/p-fv-img-1.png" alt="車いすの老人と介護士のイラスト">
-      <img src="/src/img/project/p-fv-img-2.png" alt="介護車両のイラスト">
+      <div class="p-fv__img-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="454" height="423" viewBox="0 0 454 423" fill="none">
+          <path d="M209.713 5.47218C220.074 -1.82406 233.901 -1.82405 244.261 5.47219L441.246 144.2C452.09 151.837 456.632 165.687 452.417 178.263L377.561 401.579C373.463 413.804 362.011 422.044 349.116 422.044H104.858C91.964 422.044 80.5119 413.804 76.4138 401.579L1.55779 178.263C-2.65742 165.687 1.88484 151.837 12.7284 144.2L209.713 5.47218Z" fill="#C2ECE7" />
+        </svg>
+
+      </div>
+      <img class="img-1" src="/src/img/project/p-fv-img-1.png" alt="車いすの老人と介護士のイラスト">
+      <img class="img-2" src="/src/img/project/p-fv-img-2.png" alt="介護車両のイラスト">
     </div>
   </div>
 </section>
