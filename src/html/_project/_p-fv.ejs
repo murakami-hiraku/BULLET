@@ -1,3 +1,60 @@
+<!-- 1. データを配列にまとめる -->
+<% const fvSteps = [
+
+// カード1
+{step: "点検無料"},
+// カード2
+{step: "代車無料"},
+// カード3
+{step: "車検無料"},
+// カード4
+{step: "税金無料"},
+// カード5
+{step: "劣化修理無料"},
+]; %>
+
+
 <section class="p-fv">
-  <div>test</div>
+  <div class="p-fv__inner">
+    <div class="p-fv__container">
+      <div class="p-fv__lead">
+        <img class="p-fv__lead-img" src="/src/img/common/c-house-icon.png" alt="家のアイコン">
+        <p class="p-fv__lead-text">
+          個人のご家族介護から、<br>
+          デイサービス・施設送迎・訪問介護まで対応
+        </p>
+      </div>
+      <div class="p-fv__title">
+        <h1 class="ttl-1">ぶつける。壊れる。直らない。</h1>
+        <h2 class="ttl-2"><%# 「介護車両」を一文字ずつの配列にしてループさせる %>
+          <% "介護車両".split('').forEach(char => { %>
+          <span><%= char %></span>
+          <% }); %>
+          の困った、
+        </h2>
+        <h3 class="ttl-3">だから、リフト故障も<span>即日対応</span>。</h3>
+        <h3 class="ttl-4">ぶつけキズも<span>翌日修理</span>。代車は<span>無料</span>。</h3>
+      </div>
+
+      <div class="p-fv__step">
+        <ul class="p-fv__step-container">
+          <% fvSteps.forEach((item, index) => { %>
+          <li class="p-fv__step-item">
+            <h4><%= item.step %></h4>
+
+            <%# 最後の要素以外に矢印を表示する %>
+            <% if (index < fvSteps.length - 1) { %>
+            <div class="p-fv__step-arrow"></div>
+            <% } %>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p-fv__img">
+      <img src="/src/img/project/p-fv-img-1.png" alt="車いすの老人と介護士のイラスト">
+      <img src="/src/img/project/p-fv-img-2.png" alt="介護車両のイラスト">
+    </div>
+  </div>
 </section>
