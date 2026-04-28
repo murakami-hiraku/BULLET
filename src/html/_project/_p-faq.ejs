@@ -1,0 +1,69 @@
+<%
+const faqData = [
+  {
+    question: "どのような介護車両を取り扱っていますか？",
+    answer: "車いすスロープタイプの軽バンから、リフト付きハイエースタイプまで幅広く対応しています。ご利用状況に合わせて最適な車両をご提案いたします。",
+
+  },
+  {
+    question: "サイドリフトが壊れた場合、修理期間はどのくらいですか？",
+    answer: "自社修理工場で対応するため、軽微な故障であれば即日〜翌日対応が可能です。部品取り寄せが必要な場合でも、無料の代車をご用意しますので送迎業務に支障はありません。",
+
+  },
+  {
+    question: "1台からでもリース可能ですか？",
+    answer: "はい、1台からお申込みいただけます。事業拡大に合わせた増車にも柔軟に対応いたします。",
+
+  },
+  {
+    question: "新規開業でも利用できますか？",
+    answer: "はい。開業前のご相談も承っております。初期費用を抑えたい事業者様にこそリースをおすすめしています。",
+
+  },
+  {
+    question: "ボディのキズや凹みは無料で直してもらえますか？",
+    answer: "経年劣化による修理は無料です。事故等の場合は別途ご相談となりますが、自社工場での修理のため他社より低コストで対応可能です。",
+
+  },
+  {
+    question: "契約期間はどのくらいですか？",
+    answer: "ご希望に応じてご相談いただけます。詳しくはお問い合わせください。",
+
+  },
+];
+%>
+
+
+
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__head">
+      <h2 class="faq__title">
+        よくある質問
+      </h2>
+    </div>
+    <div class="faq__body">
+      <div class="faq__cards">
+
+        <%# ループ開始時に index を受け取る %>
+        <% faqData.forEach((item, index) => { %>
+        <div class="faq__card">
+          <div class="faq__card-head">
+            <%# Q1, Q2... と表示 %>
+            <h3 class="faq__card-question">
+              <span>Q<%= index + 1 %></span><%= item.question %>
+            </h3>
+          </div>
+
+          <div class="faq__card-body">
+            <p class="faq__card-title">
+              <%# A1, A2... と表示 %>
+              <span>A<%= index + 1 %></span><%= item.answer %>
+            </p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</section>
