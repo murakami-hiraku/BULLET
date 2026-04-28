@@ -3,5 +3,112 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-faq {
-  color: red;
+  background: v.$color-main;
+  color: v.$color-text-white;
+  margin-top: 84px;
+  padding-bottom: 180px;
+
+  &__inner {
+    padding-top: 60px;
+    padding-inline: 15px;
+
+    @include m.mq(pc) {
+      padding-block: 180px;
+      padding-inline: 80px;
+    }
+  }
+
+  &__head {
+    text-align: center;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 98px;
+
+    @include m.mq(pc) {
+      margin-bottom: 134px;
+    }
+
+    h2 {
+      font-size: 20px;
+      position: relative;
+      margin-bottom: 60px;
+      z-index: 10;
+
+      @include m.mq(pc) {
+        font-size: 32px;
+      }
+    }
+
+    span {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 64px;
+      color: v.$color-bg-blue;
+      pointer-events: none;
+
+      @include m.mq(pc) {
+        font-size: 128px;
+      }
+    }
+  }
+
+  &__body {
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include m.mq(pc) {
+      max-width: 960px;
+    }
+  }
+
+  &__cards {
+  }
+
+  &__card {
+    padding-block: 28px;
+    border-bottom: 3px dashed v.$color-border-white;
+    font-size: 20px;
+
+    &:last-child {
+      @include m.mq(pc) {
+        border-bottom: none;
+      }
+    }
+
+    &-head {
+      display: flex;
+      align-items: start;
+      gap: 30px;
+      margin-bottom: 15px;
+
+      span {
+        flex-shrink: 0; // 番号が潰れないように固定
+        display: inline-block;
+        padding-top: 6px;
+      }
+    }
+
+    &-question {
+      font-size: 30px;
+    }
+
+    &-body {
+      display: flex;
+      align-items: start;
+      gap: 30px;
+
+      span {
+        flex-shrink: 0; // 番号が潰れないように固定
+        display: inline-block;
+      }
+    }
+
+    &-answer {
+    }
+  }
 }
