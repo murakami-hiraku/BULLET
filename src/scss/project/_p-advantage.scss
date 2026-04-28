@@ -3,9 +3,38 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-advantage {
-  background: #cdf0ed;
+  background: v.$color-bg-blue;
   padding-top: 30px;
-  padding-bottom: 124px;
+  padding-bottom: 54px;
+  position: relative;
+  margin-top: 300px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    clip-path: ellipse(50% 32% at 50% 50%);
+    bottom: calc(-31.771vw / 2);
+    left: 0;
+    width: 100%;
+    height: 31.771vw;
+    background: v.$color-bg-blue;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    clip-path: ellipse(50% 22% at 50% 50%);
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 100px;
+    background: v.$color-bg-blue;
+  }
 
   &__inner {
     padding-inline: 15px;
