@@ -35,30 +35,32 @@ const faqData = [
 
 
 
-<section class="faq">
-  <div class="faq__inner">
-    <div class="faq__head">
-      <h2 class="faq__title">
-        よくある質問
-      </h2>
+<section class="p-faq">
+  <div class="p-faq__inner">
+    <div class="p-faq__head">
+      <div class="p-faq__title">
+        <h2>よくある質問</h2><span>Q&A</span>
+      </div>
     </div>
-    <div class="faq__body">
-      <div class="faq__cards">
+    <div class="p-faq__body">
+      <div class="p-faq__cards">
 
         <%# ループ開始時に index を受け取る %>
         <% faqData.forEach((item, index) => { %>
-        <div class="faq__card">
-          <div class="faq__card-head">
+        <div class="p-faq__card">
+          <div class="p-faq__card-head">
             <%# Q1, Q2... と表示 %>
-            <h3 class="faq__card-question">
-              <span>Q<%= index + 1 %></span><%= item.question %>
+            <span>Q<%= index + 1 %></span>
+            <h3 class="p-faq__card-question">
+              <%= item.question %>
             </h3>
           </div>
 
-          <div class="faq__card-body">
-            <p class="faq__card-title">
-              <%# A1, A2... と表示 %>
-              <span>A<%= index + 1 %></span><%= item.answer %>
+          <div class="p-faq__card-body">
+            <%# A1, A2... と表示 %>
+            <span>A<%= index + 1 %></span>
+            <p class="p-faq__card-answer">
+              <%= item.answer %>
             </p>
           </div>
         </div>
