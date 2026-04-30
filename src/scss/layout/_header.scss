@@ -3,7 +3,7 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .l-header {
-  background-color: v.$color-bg;
+  background-color: transparent;
 
   &__inner {
     display: flex;
