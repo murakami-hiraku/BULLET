@@ -4,10 +4,10 @@
 
 .p-advantage {
   background: v.$color-bg-blue;
-  padding-top: 30px;
   padding-bottom: 54px;
   position: relative;
-  margin-top: 300px;
+  margin-top: 130px;
+  z-index: 1;
 
   &::before {
     content: "";
@@ -27,27 +27,44 @@
     display: block;
     position: absolute;
     z-index: -1;
-    clip-path: ellipse(50% 22% at 50% 50%);
+    clip-path: ellipse(50% 40% at 50% 50%);
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 450px;
+    width: 100%;
+    max-width: 360px;
     height: 100px;
     background: v.$color-bg-blue;
+
+    @include m.mq(tb) {
+      max-width: 450px;
+    }
   }
 
   &__inner {
     padding-inline: 15px;
 
+    @include m.mq(tb) {
+      padding-top: 55px;
+    }
+
     @include m.mq(pc) {
-      padding: 0;
+      padding-inline: 0;
+
       max-width: 1172px;
       margin: 0 auto;
     }
   }
 
   &__head {
+    position: relative;
+    top: -20px;
+    z-index: 10;
     text-align: center;
+
+    @include m.mq(tb) {
+      top: 0;
+    }
   }
 
   &__title {
