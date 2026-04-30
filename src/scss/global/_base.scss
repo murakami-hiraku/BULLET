@@ -1,7 +1,9 @@
 // global/_base.scss
 @use "variables" as v; // 変数を使いたい場合
 
-// *{outline:1px solid #0000FF}
+// * {
+//   outline: 1px solid #0000ff;
+// }
 
 html {
 }
@@ -21,8 +23,7 @@ body {
   margin: 0;
   padding: 0;
 
-  // 文字を滑らかにする設定（Mac用）
-  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 // 共通の画像設定（はみ出し防止）
