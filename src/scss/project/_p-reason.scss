@@ -227,6 +227,7 @@
       font-weight: 400;
       line-height: 1;
       color: v.$color-sub-light;
+      font-family: v.$fonts-allison;
 
       @include m.mq(tb) {
         font-size: 64px;
