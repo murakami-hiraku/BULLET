@@ -3,8 +3,9 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-fv {
-  overflow: hidden;
+  position: relative;
   padding-bottom: 64px;
+  padding-top: 20px;
 
   @include m.mq(tb) {
     padding-top: 60px;
@@ -13,6 +14,60 @@
   @include m.mq(pc) {
     margin-top: 84px;
     padding-bottom: 100px;
+  }
+
+  .cp-bg {
+    position: absolute;
+    z-index: -1;
+
+    &-dot {
+      top: -4%;
+      left: 24%;
+      width: 108px;
+      height: 108px;
+    }
+
+    &-stripe {
+      top: 66px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+    }
+
+    &-circle {
+      top: 142px;
+      right: 20%;
+      width: 20px;
+      height: 20px;
+    }
+
+    &-capsule {
+      width: 100px;
+      &:nth-of-type(1) {
+        left: 0;
+        top: 10%;
+      } // 1つ目のカプセル
+      &:nth-of-type(2) {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 40%;
+      } // 2つ目のカプセル
+      &:nth-of-type(3) {
+        right: 0;
+        top: 70%;
+      } // 3つ目のカプセル
+    }
+
+    &-circle--border {
+      top: 142px;
+      left: 20%;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
   }
 
   &__inner {
@@ -378,8 +433,8 @@
       position: absolute;
       z-index: 10;
       top: 0;
-      left: 0;
-      width: 105vw;
+      left: -10px;
+      width: 100vw;
       max-width: 620px;
 
       @include m.mq(pc) {
