@@ -1,6 +1,11 @@
 // global/_variables.scss
 
 @use "sass:map";
+// ==========================================
+// fonts（フォントの変数）
+// ==========================================
+$fonts-base: "Noto Sans JP", sans-serif;
+$fonts-allison: "Allison", cursive;
 
 // ==========================================
 // Colors（色の変数）
