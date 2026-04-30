@@ -15,6 +15,7 @@ body {
   font-weight: 700;
   line-height: 1.8;
   color: v.$color-text;
+  width: 100%;
 
   // 背景のデフォルト
   background-color: v.$color-bg;
@@ -23,7 +24,13 @@ body {
   margin: 0;
   padding: 0;
 
+  -webkit-overflow-scrolling: touch; /* これで指に吸い付くような動きになります */
+
+  position: relative;
+
+  // 横スクロール防止
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 // 共通の画像設定（はみ出し防止）
