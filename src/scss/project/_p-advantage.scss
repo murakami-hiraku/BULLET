@@ -3,53 +3,193 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-advantage {
-  background: v.$color-bg-blue;
   padding-bottom: 54px;
   position: relative;
+  overflow: hidden;
   margin-top: 130px;
-  z-index: 1;
+  margin-bottom: -90px;
+  padding-top: 50px;
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    clip-path: ellipse(50% 32% at 50% 50%);
-    bottom: calc(-31.771vw / 2);
-    left: 0;
-    width: 100%;
-    height: 31.771vw;
-    background: v.$color-bg-blue;
+  @include m.mq(pc) {
+    padding-bottom: 300px;
+    margin-bottom: -180px;
   }
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    clip-path: ellipse(50% 40% at 50% 50%);
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 360px;
-    height: 100px;
+  &__wrapper {
+    position: relative;
     background: v.$color-bg-blue;
 
-    @include m.mq(tb) {
-      max-width: 450px;
+    .cp-bg {
+      position: absolute;
+
+      &-dot--rotate {
+        top: 0;
+        left: -20px;
+        width: 138px;
+        width: 35.38vw;
+        height: 138px;
+        height: 35.38vw;
+        max-width: 276px;
+        max-height: 276px;
+        transform: rotate(15deg);
+
+        @include m.mq(pc) {
+          width: 250px;
+          height: 250px;
+          top: 120px;
+          left: 25%;
+          max-width: 250px;
+          max-height: 250px;
+        }
+      }
+
+      &-car {
+        color: v.$color-bg;
+        top: 50px;
+        right: -30px;
+        width: 138px;
+        width: 35.38vw;
+        height: 138px;
+        height: 35.38vw;
+        max-width: 276px;
+        max-height: 276px;
+
+        @include m.mq(pc) {
+          width: 378px;
+          height: 378px;
+          top: -20px;
+          right: 100px;
+          max-width: 378px;
+          max-height: 378px;
+        }
+      }
+
+      &-capsule {
+        width: 153px;
+        width: 39.2vw;
+        height: 153px;
+        height: 39.2vw;
+        top: 150px;
+        left: -30px;
+        max-width: 306px;
+        max-height: 306px;
+        color: #a6e6dd;
+
+        @include m.mq(pc) {
+          width: 468px;
+          height: 468px;
+          top: 80px;
+          left: -100px;
+          max-width: 468px;
+          max-height: 468px;
+        }
+      }
+
+      &-circle {
+        width: 68px;
+        width: 17.6vw;
+        height: 68px;
+        height: 17.6vw;
+        top: 150px;
+        left: 5px;
+        max-width: 136px;
+        max-height: 136px;
+
+        @include m.mq(pc) {
+          display: none;
+        }
+      }
+
+      &-stripe {
+        width: 104px;
+        width: 26.4vw;
+        height: 104px;
+        height: 26.4vw;
+        bottom: 230px;
+        left: -40px;
+        max-width: 208px;
+        max-height: 208px;
+
+        @include m.mq(pc) {
+          width: 280px;
+          height: 280px;
+          bottom: 0;
+          left: -100px;
+          max-width: 280px;
+          max-height: 280px;
+        }
+      }
+
+      &-circle--border {
+        display: none;
+
+        @include m.mq(pc) {
+          display: block;
+          width: 260px;
+          height: 260px;
+          max-width: 260px;
+          max-height: 260px;
+
+          &--1 {
+            top: 150px;
+            left: -25px;
+          }
+
+          &--2 {
+            top: 150px;
+            left: 150px;
+          }
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      clip-path: ellipse(50% 32% at 50% 50%);
+      bottom: calc(-31.771vw / 2);
+      left: 0;
+      width: 100%;
+      height: 31.771vw;
+      background: v.$color-bg-blue;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -110;
+      clip-path: ellipse(50% 40% at 50% 50%);
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 360px;
+      height: 100px;
+      background: v.$color-bg-blue;
+
+      @include m.mq(tb) {
+        max-width: 450px;
+      }
     }
   }
 
   &__inner {
+    position: relative;
+    z-index: 1;
     padding-inline: 15px;
+    padding-bottom: 90px;
 
     @include m.mq(tb) {
       padding-top: 55px;
+      padding-bottom: 100px;
     }
 
     @include m.mq(pc) {
       padding-inline: 0;
+      padding-bottom: 0;
 
       max-width: 1172px;
       margin: 0 auto;
@@ -91,8 +231,6 @@
     }
   }
   &__body {
-    margin-top: 20px;
-
     @include m.mq(pc) {
       margin-top: 40px;
     }
