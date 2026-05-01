@@ -3,6 +3,8 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-reason {
+  position: relative;
+  overflow: hidden;
   padding-top: 35px;
   padding-bottom: 55px;
 
@@ -10,6 +12,87 @@
     padding-top: 90px;
     padding-bottom: 138px;
   }
+
+  .cp-bg {
+    position: absolute;
+    z-index: -1;
+
+    &-car {
+      width: 100px;
+      width: 25.7vw;
+      height: 100px;
+      height: 25.7vw;
+      top: 27.5%;
+      left: 0;
+      max-width: 200px;
+      max-height: 200px;
+      color: #9fe2d9;
+    }
+
+    &-stripe--1 {
+      width: 100px;
+      width: 25.7vw;
+      height: 100px;
+      height: 25.7vw;
+      top: 27%;
+      right: -20px;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    &-circle--border {
+      width: 52px;
+      width: 13.6vw;
+      height: 52px;
+      height: 13.6vw;
+      max-width: 104px;
+      max-height: 104px;
+      &--1 {
+        top: 52.5%;
+        left: 0;
+      }
+      &--2 {
+        top: 52.5%;
+        left: 32px;
+      }
+    }
+
+    &-capsule--1 {
+      z-index: -10;
+      width: 116px;
+      width: 29.7vw;
+      height: 116px;
+      height: 29.7vw;
+      top: 52%;
+      left: -30px;
+      max-width: 232px;
+      max-height: 232px;
+      color: #a6e6dd;
+    }
+
+    &-dot--1 {
+      width: 75px;
+      width: 19.2vw;
+      height: 75px;
+      height: 19.2vw;
+      top: 51%;
+      right: -10px;
+      max-width: 150px;
+      max-height: 150px;
+    }
+
+    &-stripe--2 {
+      width: 48px;
+      width: 12.8vw;
+      height: 48px;
+      height: 12.8vw;
+      bottom: 24%;
+      left: 0;
+      max-width: 76px;
+      max-height: 76px;
+    }
+  }
+
   &__inner {
     padding-inline: 15px;
     padding-inline: 6.846vw;
@@ -86,7 +169,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 90px;
     justify-content: center;
 
     @include m.mq(tb) {
@@ -148,6 +231,12 @@
 
     // 偶数番目のカード（2枚目、4枚目）
     &:nth-child(even) {
+      margin-left: -10px;
+
+      @include m.mq(tb) {
+        margin-left: 0;
+      }
+
       .p-reason__card-head {
         margin-right: auto; // 左寄せ
 
@@ -246,7 +335,7 @@
       border-radius: 20px; // 画像自体も角丸にする
     }
     &-body {
-      margin-top: 54px;
+      margin-top: 16px;
       max-width: 500px;
 
       @include m.mq(tb) {
