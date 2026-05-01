@@ -3,6 +3,16 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-trouble {
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 36px;
+  margin-bottom: 50px;
+
+  @include m.mq(pc) {
+    margin-top: 120px;
+    margin-bottom: 74px;
+  }
+
   &__inner {
     padding-inline: 15px;
     @include m.mq(pc) {
