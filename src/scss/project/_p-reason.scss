@@ -6,11 +6,13 @@
   position: relative;
   overflow: hidden;
   padding-top: 35px;
-  padding-bottom: 55px;
+  padding-bottom: 95px;
+  margin-bottom: -40px;
 
   @include m.mq(pc) {
     padding-top: 90px;
-    padding-bottom: 138px;
+    padding-bottom: 338px;
+    margin-bottom: -140px;
   }
 
   .cp-bg {
@@ -27,6 +29,26 @@
       max-width: 200px;
       max-height: 200px;
       color: #9fe2d9;
+
+      @include m.mq(tb) {
+        top: 25%;
+      }
+
+      @include m.mq(pc) {
+        width: 378px;
+        width: 19.68vw;
+        height: 378px;
+        height: 19.68vw;
+        top: 28%;
+        right: 90px;
+        left: auto;
+        max-width: 378px;
+        max-height: 378px;
+      }
+
+      @include m.mq(xl) {
+        top: 25%;
+      }
     }
 
     &-stripe--1 {
@@ -35,25 +57,64 @@
       height: 100px;
       height: 25.7vw;
       top: 27%;
-      right: -20px;
+      right: -5.128%;
       max-width: 200px;
       max-height: 200px;
+
+      @include m.mq(pc) {
+        width: 250px;
+        width: 62.5vw;
+        height: 250px;
+        height: 62.5vw;
+        top: 27%;
+        left: 0;
+        max-width: 250px;
+        max-height: 250px;
+      }
     }
 
-    &-circle--border {
+    // ブロックー１
+    &-circle--border--1 {
       width: 52px;
       width: 13.6vw;
       height: 52px;
       height: 13.6vw;
       max-width: 104px;
       max-height: 104px;
-      &--1 {
-        top: 52.5%;
-        left: 0;
+      top: 52.5%;
+      left: 0;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.23vw;
+        height: 254px;
+        height: 13.23vw;
+        max-width: 254px;
+        max-height: 254px;
+        top: 140px;
+        left: -1.14%;
       }
-      &--2 {
-        top: 52.5%;
-        left: 32px;
+    }
+
+    &-circle--border--2 {
+      width: 52px;
+      width: 13.6vw;
+      height: 52px;
+      height: 13.6vw;
+      max-width: 104px;
+      max-height: 104px;
+      top: 52.5%;
+      left: 8.205%;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.23vw;
+        height: 254px;
+        height: 13.23vw;
+        max-width: 254px;
+        max-height: 254px;
+        top: 140px;
+        left: 7.39%;
       }
     }
 
@@ -64,11 +125,23 @@
       height: 116px;
       height: 29.7vw;
       top: 52%;
-      left: -30px;
+      left: -7.69%;
       max-width: 232px;
       max-height: 232px;
       color: #a6e6dd;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        top: 80px;
+        left: -9.375%;
+        max-width: 568px;
+        max-height: 568px;
+      }
     }
+    // ブロックー１
 
     &-dot--1 {
       width: 75px;
@@ -79,6 +152,21 @@
       right: -10px;
       max-width: 150px;
       max-height: 150px;
+
+      @include m.mq(pc) {
+        width: 250px;
+        width: 13.02vw;
+        height: 250px;
+        height: 13.02vw;
+        top: 80px;
+        right: -25px;
+        max-width: 250px;
+        max-height: 250px;
+
+        @include m.mq(xl) {
+          top: 0;
+        }
+      }
     }
 
     &-stripe--2 {
@@ -90,7 +178,195 @@
       left: 0;
       max-width: 76px;
       max-height: 76px;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 65.2vw;
+        height: 254px;
+        height: 65.2vw;
+        bottom: 24%;
+        left: -60px;
+        max-width: 254px;
+        max-height: 254px;
+      }
     }
+
+    // ブロックー２
+    &-circle--border--3 {
+      z-index: -1;
+      width: 40px;
+      width: 10.4vw;
+      height: 40px;
+      height: 10.4vw;
+      max-width: 80px;
+      max-height: 80px;
+      bottom: 22.5%;
+      left: 2.564%;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.2vw;
+        height: 254px;
+        height: 13.2vw;
+        bottom: 160px;
+        left: -4.166%;
+        max-width: 254px;
+        max-height: 254px;
+      }
+
+      @include m.mq(xl) {
+        bottom: 260px;
+      }
+    }
+
+    &-capsule--2 {
+      z-index: -10;
+      width: 84px;
+      width: 21.6vw;
+      height: 84px;
+      height: 21.6vw;
+      max-width: 168px;
+      max-height: 168px;
+      color: #a6e6dd;
+      bottom: 21%;
+      left: -2.564%;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        bottom: 10px;
+        left: -12.5%;
+        max-width: 568px;
+        max-height: 568px;
+      }
+
+      @include m.mq(xl) {
+        bottom: -15px;
+      }
+    }
+
+    &-capsule--3 {
+      z-index: -5;
+      width: 84px;
+      width: 21.6vw;
+      height: 84px;
+      height: 21.6vw;
+      bottom: 20.2%;
+      left: -2.564%;
+      max-width: 168px;
+      max-height: 168px;
+      color: #c7f3ed;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        bottom: -60px;
+        left: -12.5%;
+        max-width: 568px;
+        max-height: 568px;
+      }
+
+      @include m.mq(xl) {
+        bottom: -115px;
+      }
+    }
+    // ブロックー2
+
+    &-dot--2 {
+      width: 62px;
+      width: 16.1vw;
+      height: 62px;
+      height: 16.1vw;
+      bottom: 23%;
+      right: 18px;
+      max-width: 124px;
+      max-height: 124px;
+
+      @include m.mq(pc) {
+        display: none;
+      }
+    }
+
+    // ブロックー3
+    &-capsule--4 {
+      width: 124px;
+      width: 32.8vw;
+      height: 124px;
+      height: 32.8vw;
+      bottom: 0;
+      right: -5.128%;
+      max-width: 248px;
+      max-height: 248px;
+      color: #a6e6dd;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        bottom: 20%;
+        right: -50px;
+        max-width: 568px;
+        max-height: 568px;
+      }
+    }
+
+    &-circle--border--4 {
+      width: 54px;
+      width: 14.2vw;
+      height: 54px;
+      height: 14.2vw;
+      max-width: 108px;
+      max-height: 108px;
+      bottom: 48px;
+      right: -2.564%;
+
+      @include m.mq(pc) {
+        width: 300px;
+        width: 15.625vw;
+        height: 300px;
+        height: 15.625vw;
+        bottom: 24%;
+        right: -50px;
+        max-width: 300px;
+        max-height: 300px;
+      }
+
+      @include m.mq(xl) {
+        bottom: 27%;
+      }
+    }
+
+    &-circle--border--5 {
+      width: 54px;
+      width: 14.2vw;
+      height: 54px;
+      height: 14.2vw;
+      max-width: 108px;
+      max-height: 108px;
+      bottom: 48px;
+      right: 6.3%;
+
+      @include m.mq(pc) {
+        width: 300px;
+        width: 15.625vw;
+        height: 300px;
+        height: 15.625vw;
+        bottom: 24%;
+        right: 6%;
+        max-width: 300px;
+        max-height: 300px;
+      }
+
+      @include m.mq(xl) {
+        bottom: 27%;
+      }
+    }
+    // ブロックー3
   }
 
   &__inner {

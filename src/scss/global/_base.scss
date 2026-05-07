@@ -15,6 +15,7 @@ body {
   font-weight: 700;
   line-height: 1.8;
   color: v.$color-text;
+  background: v.$color-bg;
   width: 100%;
 
   // 背景のデフォルト
@@ -48,5 +49,21 @@ a {
 
   &:hover {
     opacity: 0.7;
+  }
+}
+
+.cp-bg {
+  width: 0; // 幅をゼロにして場所を取らせない
+  height: 0;
+  will-change: transform, opacity;
+
+  // スタイルが読み込まれるまで、あるいは配置が決まるまで隠しておく
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease; // ふわっと出すためのアニメーション
+  // 「bodyに.is-loadedがついた時」の .cp-bg を指定
+  body.is-loaded & {
+    opacity: 1;
+    visibility: visible;
   }
 }
