@@ -15,70 +15,72 @@
 
 
 <section class="p-fv">
-  <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--primary'}) %>
-  <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--rotate'}) %>
-  <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
-  <%- include('./src/html/_components/_cp-bg-circle.ejs')  %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--2'}) %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--3'}) %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--4'}) %>
-  <%- include('./src/html/_components/_cp-bg-round_box.ejs')  %>
-  <%- include('./src/html/_components/_cp-bg-capsule--border.ejs')  %>
+  <div class="l-wrapper">
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--primary'}) %>
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--rotate'}) %>
+    <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
+    <%- include('./src/html/_components/_cp-bg-circle.ejs')  %>
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--2'}) %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--3'}) %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--4'}) %>
+    <%- include('./src/html/_components/_cp-bg-round_box.ejs')  %>
+    <%- include('./src/html/_components/_cp-bg-capsule--border.ejs')  %>
 
-  <div class="p-fv__inner">
-    <div class="p-fv__container">
-      <div class="p-fv-contents">
-        <div class="p-fv__lead">
-          <img class="p-fv__lead-img" src="/src/img/common/c-house-icon.png" alt="家のアイコン">
-          <p class="p-fv__lead-text">
-            個人のご家族介護から、<br>
-            デイサービス・施設送迎・訪問介護まで対応
-          </p>
-        </div>
-        <div class="p-fv__title">
-          <h1 class="ttl-1">ぶつける。壊れる。直らない。</h1>
-          <div class="ttl-2">
-            <h2 class="ttl-2-1"><%# 「介護車両」を一文字ずつの配列にしてループさせる %>
-              <% "介護車両".split('').forEach(char => { %>
-              <span class="is-accent"><%= char %></span>
+    <div class="p-fv__inner">
+      <div class="p-fv__container">
+        <div class="p-fv-contents">
+          <div class="p-fv__lead">
+            <img class="p-fv__lead-img" src="/src/img/common/c-house-icon.png" alt="家のアイコン">
+            <p class="p-fv__lead-text">
+              個人のご家族介護から、<br>
+              デイサービス・施設送迎・訪問介護まで対応
+            </p>
+          </div>
+          <div class="p-fv__title">
+            <h1 class="ttl-1">ぶつける。壊れる。直らない。</h1>
+            <div class="ttl-2">
+              <h2 class="ttl-2-1"><%# 「介護車両」を一文字ずつの配列にしてループさせる %>
+                <% "介護車両".split('').forEach(char => { %>
+                <span class="is-accent"><%= char %></span>
+                <% }); %>
+                <span class="is-normal">の困った、</span>
+              </h2>
+              <h2 class="ttl-2-2">終わらせます。</h2>
+            </div>
+            <div class="ttl-3">
+              <h3 class="ttl-3-1">だから、リフト故障も<span>即日対応</span>。</h3>
+              <h3 class="ttl-3-2">ぶつけキズも<span>翌日修理</span>。代車は<span>無料</span>。</h3>
+            </div>
+          </div>
+
+          <div class="p-fv__step">
+            <ul class="p-fv__step-container">
+              <% fvSteps.forEach((item, index) => { %>
+              <li class="p-fv__step-item">
+                <h4><%- item.step %></h4>
+
+                <%# 最後の要素以外に矢印を表示する %>
+                <% if (index < fvSteps.length - 1) { %>
+                <div class="p-fv__step-icon"></div>
+                <% } %>
+              </li>
               <% }); %>
-              <span class="is-normal">の困った、</span>
-            </h2>
-            <h2 class="ttl-2-2">終わらせます。</h2>
-          </div>
-          <div class="ttl-3">
-            <h3 class="ttl-3-1">だから、リフト故障も<span>即日対応</span>。</h3>
-            <h3 class="ttl-3-2">ぶつけキズも<span>翌日修理</span>。代車は<span>無料</span>。</h3>
+            </ul>
           </div>
         </div>
 
-        <div class="p-fv__step">
-          <ul class="p-fv__step-container">
-            <% fvSteps.forEach((item, index) => { %>
-            <li class="p-fv__step-item">
-              <h4><%- item.step %></h4>
+        <div class="p-fv__img">
+          <div class="p-fv__img-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="454" height="423" viewBox="0 0 454 423" fill="none">
+              <path d="M209.713 5.47218C220.074 -1.82406 233.901 -1.82405 244.261 5.47219L441.246 144.2C452.09 151.837 456.632 165.687 452.417 178.263L377.561 401.579C373.463 413.804 362.011 422.044 349.116 422.044H104.858C91.964 422.044 80.5119 413.804 76.4138 401.579L1.55779 178.263C-2.65742 165.687 1.88484 151.837 12.7284 144.2L209.713 5.47218Z" fill="#C2ECE7" />
+            </svg>
 
-              <%# 最後の要素以外に矢印を表示する %>
-              <% if (index < fvSteps.length - 1) { %>
-              <div class="p-fv__step-icon"></div>
-              <% } %>
-            </li>
-            <% }); %>
-          </ul>
+          </div>
+          <img class="img-1" src="/src/img/project/p-fv-img-1.png" alt="車いすの老人と介護士のイラスト">
+          <img class="img-2" src="/src/img/project/p-fv-img-2.png" alt="介護車両のイラスト">
         </div>
-      </div>
-
-      <div class="p-fv__img">
-        <div class="p-fv__img-bg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="454" height="423" viewBox="0 0 454 423" fill="none">
-            <path d="M209.713 5.47218C220.074 -1.82406 233.901 -1.82405 244.261 5.47219L441.246 144.2C452.09 151.837 456.632 165.687 452.417 178.263L377.561 401.579C373.463 413.804 362.011 422.044 349.116 422.044H104.858C91.964 422.044 80.5119 413.804 76.4138 401.579L1.55779 178.263C-2.65742 165.687 1.88484 151.837 12.7284 144.2L209.713 5.47218Z" fill="#C2ECE7" />
-          </svg>
-
-        </div>
-        <img class="img-1" src="/src/img/project/p-fv-img-1.png" alt="車いすの老人と介護士のイラスト">
-        <img class="img-2" src="/src/img/project/p-fv-img-2.png" alt="介護車両のイラスト">
       </div>
     </div>
   </div>
