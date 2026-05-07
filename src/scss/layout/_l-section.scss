@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "../global/variables" as v; // 変数を使いたい場合
+@use "../global/mixin" as m; // ミックスインを使いたい場合
+
+.l-section {
+  overflow: hidden;
+}
