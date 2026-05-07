@@ -321,11 +321,15 @@
 
     .ttl-2 {
       margin-left: 8px;
+      max-width: 360px;
+      margin: 0 auto;
 
       @include m.mq(tb) {
         display: flex;
         align-items: end;
+        max-width: none;
         height: 80px;
+        margin: 0;
         margin-left: 16px;
       }
 
