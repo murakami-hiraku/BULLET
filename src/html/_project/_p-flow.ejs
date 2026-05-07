@@ -13,34 +13,53 @@
 {icon: "p-flow-icon-5.png",title: "納車・ご利用開始",text: "引渡しまで約2週間程度。納車後はすぐに送迎業務でご利用いただけます。"}
 ]; %>
 
-<section class="p-flow">
-  <div class="p-flow__inner">
-    <div class="p-flow__head">
-      <h2 class="p-flow__title">ご利用までの流れ</h2>
-    </div>
-    <div class="p-flow__body">
-      <ul class="p-flow__list">
-        <% flowSteps.forEach((step, index) => { %>
-        <li class="p-flow__item">
-          <div class="p-flow__card">
-            <div class="p-flow__card-head">
-              <div class="p-flow__card-icon"> <img src="/src/img/project/<%= step.icon %>" alt=""> </div>
+<section class="l-section p-flow">
+
+  <div class="l-wrapper">
+
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--1'}) %>
+
+    <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
+
+
+    <!-- ブロックー１ -->
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--1'})  %>
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
+    <!-- ブロックー１ -->
+
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--2'}) %>
+
+
+
+    <div class="p-flow__inner">
+      <div class="p-flow__head">
+        <h2 class="p-flow__title">ご利用までの流れ</h2>
+      </div>
+      <div class="p-flow__body">
+        <ul class="p-flow__list">
+          <% flowSteps.forEach((step, index) => { %>
+          <li class="p-flow__item">
+            <div class="p-flow__card">
+              <div class="p-flow__card-head">
+                <div class="p-flow__card-icon"> <img src="/src/img/project/<%= step.icon %>" alt=""> </div>
+              </div>
+              <div class="p-flow__card-body">
+                <h3 class="p-flow__card-title">
+                  <%= step.title %>
+                </h3>
+                <p class="p-flow__card-text">
+                  <%= step.text %>
+                </p>
+              </div>
             </div>
-            <div class="p-flow__card-body">
-              <h3 class="p-flow__card-title">
-                <%= step.title %>
-              </h3>
-              <p class="p-flow__card-text">
-                <%= step.text %>
-              </p>
-            </div>
-          </div>
-          <%# 最後の要素以外に矢印を表示する %>
-          <% if (index < flowSteps.length - 1) { %>
-          <div class="p-flow__arrow"></div>
-          <% } %>
-        </li>
-        <% }); %>
-      </ul>
+            <%# 最後の要素以外に矢印を表示する %>
+            <% if (index < flowSteps.length - 1) { %>
+            <div class="p-flow__arrow"></div>
+            <% } %>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
     </div>
 </section>
