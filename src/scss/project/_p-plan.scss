@@ -3,13 +3,127 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-plan {
+  position: relative;
+  z-index: -20;
   background: v.$color-bg-blue;
-  padding-top: 140px;
+  padding-top: 200px;
   padding-bottom: 224px;
+  margin-top: -140px;
+  margin-bottom: -180px;
 
   @include m.mq(pc) {
-    padding-top: 188px;
-    padding-bottom: 208px;
+    margin-top: -80px;
+    margin-bottom: -120px;
+  }
+
+  .cp-bg {
+    position: absolute;
+    z-index: -1;
+
+    // ブロックー２
+    &-circle--border--1 {
+      z-index: -1;
+      width: 72px;
+      width: 18.46vw;
+      height: 72px;
+      height: 18.46vw;
+      max-width: 144px;
+      max-height: 144px;
+      top: 7%;
+      left: -4.166%;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.2vw;
+        height: 254px;
+        height: 13.2vw;
+        top: 1%;
+        left: -4.166%;
+        max-width: 254px;
+        max-height: 254px;
+      }
+
+      @include m.mq(xl) {
+      }
+    }
+
+    &-capsule--1 {
+      z-index: -10;
+      width: 162px;
+      width: 41.538vw;
+      height: 162px;
+      height: 41.538vw;
+      max-width: 324px;
+      max-height: 324px;
+      color: #a6e6dd;
+      top: 5%;
+      left: -8.564%;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        top: -80px;
+        max-width: 568px;
+        max-height: 568px;
+      }
+
+      @include m.mq(xl) {
+      }
+    }
+
+    &-capsule--2 {
+      z-index: -5;
+      width: 162px;
+      width: 41.538vw;
+      height: 162px;
+      height: 41.538vw;
+      top: 9%;
+      left: -10.564%;
+      max-width: 324px;
+      max-height: 324px;
+      color: #c3f4b4;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        top: 80px;
+        max-width: 568px;
+        max-height: 568px;
+      }
+
+      @include m.mq(xl) {
+      }
+    }
+    // ブロックー2
+
+    &-dot--1 {
+      width: 94px;
+      width: 24.1vw;
+      height: 94px;
+      height: 24.1vw;
+      top: 50%;
+      right: 0;
+      max-width: 188px;
+      max-height: 188px;
+
+      @include m.mq(pc) {
+        width: 250px;
+        width: 13.02vw;
+        height: 250px;
+        height: 13.02vw;
+        top: auto;
+        bottom: -200px;
+        max-width: 250px;
+        max-height: 250px;
+
+        @include m.mq(xl) {
+        }
+      }
+    }
   }
 
   &__inner {

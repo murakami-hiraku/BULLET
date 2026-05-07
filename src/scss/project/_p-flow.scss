@@ -3,7 +3,157 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-flow {
-  background-color: v.$color-bg;
+  position: relative;
+  padding-top: 150px;
+  margin-top: -150px;
+
+  .cp-bg {
+    position: absolute;
+    z-index: -1;
+
+    &-dot--1 {
+      width: 94px;
+      width: 24.1vw;
+      height: 94px;
+      height: 24.1vw;
+      top: 3%;
+      left: 15px;
+      max-width: 188px;
+      max-height: 188px;
+
+      @include m.mq(pc) {
+        width: 250px;
+        width: 13.02vw;
+        height: 250px;
+        height: 13.02vw;
+        top: 0.1%;
+        left: 0;
+        max-width: 250px;
+        max-height: 250px;
+
+        @include m.mq(xl) {
+          top: 0;
+        }
+      }
+    }
+
+    &-stripe--1 {
+      width: 125px;
+      width: 32.05vw;
+      height: 125px;
+      height: 32.05vw;
+      top: 6%;
+      left: -30px;
+      max-width: 250px;
+      max-height: 250px;
+
+      @include m.mq(pc) {
+        width: 350px;
+        width: 18.229vw;
+        height: 350px;
+        height: 18.229vw;
+        top: 16%;
+        left: -6%;
+        max-width: 350px;
+        max-height: 350px;
+      }
+    }
+
+    // ブロックー１
+    &-circle--border--1 {
+      width: 104px;
+      width: 26.6vw;
+      height: 104px;
+      height: 26.6vw;
+      max-width: 208px;
+      max-height: 208px;
+      top: 39.5%;
+      right: -20%;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.23vw;
+        height: 254px;
+        height: 13.23vw;
+        max-width: 254px;
+        max-height: 254px;
+        top: 0;
+        right: -6%;
+      }
+    }
+
+    &-circle--border--2 {
+      width: 104px;
+      width: 26.6vw;
+      height: 104px;
+      height: 26.6vw;
+      max-width: 208px;
+      max-height: 208px;
+      top: 39.5%;
+      right: 0;
+
+      @include m.mq(pc) {
+        width: 254px;
+        width: 13.23vw;
+        height: 254px;
+        height: 13.23vw;
+        max-width: 254px;
+        max-height: 254px;
+        top: 0;
+        right: 4%;
+      }
+    }
+
+    &-capsule--1 {
+      z-index: -10;
+      width: 228px;
+      width: 58.46vw;
+      height: 228px;
+      height: 58.46vw;
+      top: 36%;
+      right: -20.69%;
+      max-width: 456px;
+      max-height: 456px;
+      color: #a6e6dd;
+
+      @include m.mq(pc) {
+        width: 568px;
+        width: 29.58vw;
+        height: 568px;
+        height: 29.58vw;
+        top: -10.8125%;
+        right: -10%;
+        max-width: 568px;
+        max-height: 568px;
+      }
+    }
+    // ブロックー１
+
+    &-dot--2 {
+      width: 134px;
+      width: 34.36vw;
+      height: 134px;
+      height: 34.36vw;
+      bottom: 0;
+      left: -8%;
+      max-width: 268px;
+      max-height: 268px;
+
+      @include m.mq(pc) {
+        width: 250px;
+        width: 13.02vw;
+        height: 250px;
+        height: 13.02vw;
+        left: auto;
+        right: -25px;
+        max-width: 250px;
+        max-height: 250px;
+
+        @include m.mq(xl) {
+        }
+      }
+    }
+  }
 
   &__inner {
     padding-inline: 30px;
