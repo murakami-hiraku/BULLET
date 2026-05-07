@@ -3,6 +3,7 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-reason {
+  background: #ecfffd;
   position: relative;
   overflow: hidden;
   padding-top: 35px;
@@ -10,8 +11,9 @@
   margin-bottom: -40px;
 
   @include m.mq(pc) {
-    padding-top: 90px;
+    padding-top: 180px;
     padding-bottom: 338px;
+    margin-top: -90px;
     margin-bottom: -140px;
   }
 
@@ -454,6 +456,100 @@
   }
 
   &__card {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1000;
+      display: block;
+      width: 466px;
+      width: clamp(466px, 95.25vw, 650px);
+      max-width: 650px;
+      height: 400px;
+      top: 120px;
+      top: clamp(1px, 30.77vw, 160px);
+      left: 50%;
+      background: v.$color-bg;
+      pointer-events: none;
+
+      @include m.mq(tb) {
+        max-width: none;
+        width: 1630px;
+        height: 300px;
+        top: 50px;
+      }
+      @include m.mq(pc) {
+        top: 40px;
+      }
+    }
+
+    &:nth-child(odd) {
+      &::before {
+        transform: translateX(-50%) rotate(-6deg);
+
+        @include m.mq(tb) {
+          transform: translateX(0) rotate(-5deg);
+          left: auto;
+          right: -15px;
+          right: -1.953vw;
+        }
+        @include m.mq(pc) {
+          right: -10px;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      &::before {
+        transform: translateX(-50%) rotate(8deg);
+
+        @include m.mq(tb) {
+          transform: translateX(0) rotate(5deg);
+          left: -15px;
+          left: -1.953vw;
+        }
+        @include m.mq(pc) {
+          left: -10px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        top: clamp(1px, 30.77vw, 190px);
+
+        @include m.mq(tb) {
+          top: 20px;
+        }
+
+        @include m.mq(pc) {
+          top: 60px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        top: clamp(1px, 30.77vw, 100px);
+
+        @include m.mq(tb) {
+          top: 20px;
+        }
+
+        @include m.mq(pc) {
+          top: 50px;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      &::before {
+        @include m.mq(pc) {
+          top: 60px;
+        }
+      }
+    }
+
     @include m.mq(tb) {
       display: flex;
       gap: 60px;
@@ -467,6 +563,12 @@
 
     @include m.mq(pc) {
       gap: 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      @include m.mq(lg) {
+        max-width: none;
+      }
     }
 
     // 奇数番目のカード（1枚目、3枚目）
