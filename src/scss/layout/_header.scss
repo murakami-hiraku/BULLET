@@ -3,8 +3,16 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .l-header {
+  position: relative;
+  z-index: 1000;
   background-color: transparent;
   margin-bottom: -50px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  body.is-loaded & {
+    opacity: 1;
+  }
 
   @include m.mq(tb) {
     margin-bottom: -70px;
@@ -28,6 +36,7 @@
     display: none;
 
     @include m.mq(tb) {
+      display: block;
       display: flex;
       justify-content: end;
       gap: 20px;

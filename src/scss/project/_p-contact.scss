@@ -3,6 +3,8 @@
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
 .p-contact {
+  position: relative;
+  z-index: 9999;
   max-width: 500px;
   margin: 0 auto;
 

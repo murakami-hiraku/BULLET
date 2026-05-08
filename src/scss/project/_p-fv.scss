@@ -4,8 +4,8 @@
 
 .p-fv {
   position: relative;
-  padding-bottom: 64px;
   padding-top: 70px;
+  padding-bottom: 30px;
   overflow-x: hidden;
   overflow: hidden;
 
@@ -16,7 +16,8 @@
 
   @include m.mq(pc) {
     padding-top: 154px;
-    padding-bottom: 100px;
+    padding-bottom: 300px;
+    margin-bottom: -200px;
   }
 
   .cp-bg {
@@ -39,6 +40,7 @@
           width: 62.5vw;
           height: 250px;
           height: 62.5vw;
+          top: -200px;
           left: 128px;
           max-width: 250px;
           max-height: 250px;
@@ -319,11 +321,15 @@
 
     .ttl-2 {
       margin-left: 8px;
+      max-width: 360px;
+      margin: 0 auto;
 
       @include m.mq(tb) {
         display: flex;
         align-items: end;
+        max-width: none;
         height: 80px;
+        margin: 0;
         margin-left: 16px;
       }
 

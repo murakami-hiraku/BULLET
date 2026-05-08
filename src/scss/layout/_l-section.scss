@@ -2,8 +2,6 @@
 @use "../global/variables" as v; // 変数を使いたい場合
 @use "../global/mixin" as m; // ミックスインを使いたい場合
 
-.l-wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-  position: relative;
+.l-section {
+  overflow: hidden;
 }

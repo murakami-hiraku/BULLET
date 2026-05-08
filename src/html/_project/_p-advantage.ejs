@@ -12,16 +12,18 @@ const advantageData = [
 ];
 %>
 
-<section class="p-advantage">
+<section class="p-advantage js-fade-in">
 
-  <div class="p-advantage__wrapper">
-    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--rotate'}) %>
+  <div class="l-wrapper p-advantage__wrapper">
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--1'}) %>
     <%- include('./src/html/_components/_cp-bg-car.ejs') %>
-    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
-    <%- include('./src/html/_components/_cp-bg-circle.ejs')  %>
     <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
+
+    <!-- グループー１ -->
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
     <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--1'})  %>
     <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
+    <!-- グループー１ -->
 
 
     <div class="p-advantage__inner">

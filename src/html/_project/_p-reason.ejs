@@ -31,56 +31,69 @@ const reasonData = [
 ];
 %>
 
-<section class="p-reason">
+<section class="l-section p-reason js-fade-in">
+  <div class="l-wrapper">
 
-  <%- include('./src/html/_components/_cp-bg-car.ejs') %>
-  <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--1'})  %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
-  <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--1'}) %>
-  <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--2'})  %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--3'})  %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--2'}) %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--3'}) %>
-  <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--2'}) %>
-  <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--4'}) %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--4'})  %>
-  <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--5'})  %>
+    <%- include('./src/html/_components/_cp-bg-car.ejs') %>
+    <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--1'})  %>
+
+    <!-- ブロックー１ -->
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--1'})  %>
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--2'})  %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--1'}) %>
+    <!-- ブロックー１ -->
+
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--1'}) %>
+    <%- include('./src/html/_components/_cp-bg-stripe.ejs', { modifier: 'cp-bg-stripe--2'})  %>
+
+    <!-- ブロックー２ -->
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--3'})  %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--2'}) %>
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--3'}) %>
+    <!-- ブロックー２ -->
+
+    <%- include('./src/html/_components/_cp-bg-dot.ejs', { modifier: 'cp-bg-dot--2'}) %>
+
+    <!-- ブロックー３ -->
+    <%- include('./src/html/_components/_cp-bg-capsule.ejs', { modifier: 'cp-bg-capsule--4'}) %>
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--4'})  %>
+    <%- include('./src/html/_components/_cp-bg-circle--border.ejs', { modifier: 'cp-bg-circle--border--5'})  %>
+    <!-- ブロックー３ -->
 
 
-  <div class="p-reason__inner">
-    <div class="p-reason__head">
-      <h4 class="p-reason__title--sub">BULLETリースが</h4>
-      <h2 class="p-reason__title">
-        <%# 「選ばれる４つの理由」を一文字ずつの配列にしてループさせる %>
-        <% "選ばれる４つの理由".split('').forEach(char => { %>
-        <span><%= char %></span>
-        <% }); %>
-      </h2>
-    </div>
-    <div class="p-reason__body">
-      <div class="p-reason__cards">
-        <% reasonData.forEach((item, index) => { %>
-        <%# 1 -> 01, 2 -> 02 と変換する処理 %>
-        <% const rowNumber = (index + 1).toString().padStart(2, '0'); %>
+    <div class="p-reason__inner">
+      <div class="p-reason__head">
+        <h4 class="p-reason__title--sub">BULLETリースが</h4>
+        <h2 class="p-reason__title">
+          <%# 「選ばれる４つの理由」を一文字ずつの配列にしてループさせる %>
+          <% "選ばれる４つの理由".split('').forEach(char => { %>
+          <span><%= char %></span>
+          <% }); %>
+        </h2>
+      </div>
+      <div class="p-reason__body">
+        <div class="p-reason__cards">
+          <% reasonData.forEach((item, index) => { %>
+          <%# 1 -> 01, 2 -> 02 と変換する処理 %>
+          <% const rowNumber = (index + 1).toString().padStart(2, '0'); %>
 
-        <div class="p-reason__card <%= item.className %>">
-          <div class="p-reason__card-head">
-            <span class="p-reason__card-number">Point<%= rowNumber %></span>
-            <img class="p-reason__card-img" src="<%= item.img %>" alt="<%= item.alt %>">
+          <div class="p-reason__card <%= item.className %>">
+            <div class="p-reason__card-head">
+              <span class="p-reason__card-number">Point<%= rowNumber %></span>
+              <img class="p-reason__card-img" src="<%= item.img %>" alt="<%= item.alt %>">
+            </div>
+
+            <div class="p-reason__card-body">
+              <h3 class="p-reason__card-title">
+                <%- item.title %>
+              </h3>
+              <p class="p-reason__card-text">
+                <%- item.text %>
+              </p>
+            </div>
           </div>
-
-          <div class="p-reason__card-body">
-            <h3 class="p-reason__card-title">
-              <%- item.title %>
-            </h3>
-            <p class="p-reason__card-text">
-              <%- item.text %>
-            </p>
-          </div>
+          <% }); %>
         </div>
-        <% }); %>
       </div>
     </div>
   </div>
