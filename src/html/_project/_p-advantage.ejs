@@ -46,38 +46,40 @@ const advantageData = [
           </div>
         </div>
         <div class="p-advantage__table-wrapper">
-          <table class="p-advantage__table">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="is-bullet">BULLETリース</th>
-                <th>A社（大手リース）</th>
-                <th>B社（福祉車両専門）</th>
-              </tr>
+          <div class="p-advantage__table-scroll">
+            <table class="p-advantage__table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="is-bullet">BULLETリース</th>
+                  <th>A社（大手リース）</th>
+                  <th>B社（福祉車両専門）</th>
+                </tr>
 
-              <!-- 「隙間用の行」を入れる -->
-              <tr class="p-advantage__row-spacer">
-                <td></td>
-              </tr>
-            </thead>
-            <tbody>
-              <% advantageData.forEach((row, index) => { %>
-              <tr>
-                <th><%= row.label %></th>
-                <td class="is-bullet"><%= row.bullet %></td>
-                <td><%= row.companyA %></td>
-                <td><%= row.companyB %></td>
-              </tr>
+                <!-- 「隙間用の行」を入れる -->
+                <tr class="p-advantage__row-spacer">
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                <% advantageData.forEach((row, index) => { %>
+                <tr>
+                  <th><%= row.label %></th>
+                  <td class="is-bullet"><%= row.bullet %></td>
+                  <td><%= row.companyA %></td>
+                  <td><%= row.companyB %></td>
+                </tr>
 
-              <%# 1行目(0)、3行目(2)の後に「隙間用の行」を入れる %>
-              <% if (index === 1 || index === 3) { %>
-              <tr class="p-advantage__row-spacer">
-                <td></td>
-              </tr>
-              <% } %>
-              <% }); %>
-            </tbody>
-          </table>
+                <%# 1行目(0)、3行目(2)の後に「隙間用の行」を入れる %>
+                <% if (index === 1 || index === 3) { %>
+                <tr class="p-advantage__row-spacer">
+                  <td></td>
+                </tr>
+                <% } %>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
