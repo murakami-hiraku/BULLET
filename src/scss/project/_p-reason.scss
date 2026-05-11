@@ -310,10 +310,14 @@
         width: 29.58vw;
         height: 568px;
         height: 29.58vw;
-        bottom: 20%;
-        right: -50px;
+        bottom: 15%;
+        right: -10%;
         max-width: 568px;
         max-height: 568px;
+      }
+
+      @include m.mq(xl) {
+        right: -50px;
       }
     }
 
@@ -332,14 +336,15 @@
         width: 15.625vw;
         height: 300px;
         height: 15.625vw;
-        bottom: 24%;
-        right: -50px;
+        bottom: 20%;
+        right: -10%;
         max-width: 300px;
         max-height: 300px;
       }
 
       @include m.mq(xl) {
-        bottom: 27%;
+        right: -50px;
+        bottom: 22%;
       }
     }
 
@@ -358,14 +363,15 @@
         width: 15.625vw;
         height: 300px;
         height: 15.625vw;
-        bottom: 24%;
-        right: 6%;
+        bottom: 20%;
+        right: -2%;
         max-width: 300px;
         max-height: 300px;
       }
 
       @include m.mq(xl) {
-        bottom: 27%;
+        right: 6%;
+        bottom: 22%;
       }
     }
     // ブロックー3
@@ -530,7 +536,7 @@
 
     &:nth-child(3) {
       &::before {
-        top: clamp(1px, 30.77vw, 100px);
+        top: clamp(1px, 30.77vw, 80px);
 
         @include m.mq(tb) {
           top: 20px;
@@ -544,6 +550,10 @@
 
     &:nth-child(4) {
       &::before {
+        @include m.mq(tb) {
+          top: 30px;
+        }
+
         @include m.mq(pc) {
           top: 60px;
         }

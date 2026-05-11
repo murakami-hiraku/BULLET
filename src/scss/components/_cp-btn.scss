@@ -11,20 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  border: 3px solid transparent; // 最初から枠線の場所を確保しておく
+  transition: all 0.5s;
 
   a {
     display: flex;
     align-items: center;
     justify-content: center;
     color: v.$color-text-white;
-
-    img {
-      width: 28px;
-      height: 28px;
-    }
 
     span {
       font-size: 24px;
@@ -33,7 +27,18 @@
 
   &__line {
     background-color: v.$color-accent-green;
-    border: none;
+
+    &:hover {
+      background: v.$color-bg;
+      border: 3px solid v.$color-accent-green;
+
+      a {
+        color: v.$color-accent-green;
+        svg {
+          stroke: v.$color-accent-green;
+        }
+      }
+    }
 
     a {
       gap: 4px;
@@ -42,7 +47,18 @@
 
   &__tel {
     background-color: v.$color-accent-orange;
-    border: none;
+
+    &:hover {
+      background: v.$color-bg;
+      border: 3px solid v.$color-accent-orange;
+
+      a {
+        color: v.$color-accent-orange;
+        svg {
+          stroke: v.$color-accent-orange;
+        }
+      }
+    }
 
     a {
       gap: 9px;

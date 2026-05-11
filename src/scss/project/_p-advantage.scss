@@ -6,7 +6,7 @@
   padding-bottom: 54px;
   position: relative;
   overflow: hidden;
-  margin-top: 130px;
+  margin-top: 80px;
   margin-bottom: -90px;
   padding-top: 50px;
 
@@ -319,24 +319,33 @@
     @include m.mq(pc) {
       margin-top: 50px;
     }
+  }
+
+  &__table-scroll {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
 
     // --- Google Chrome, Safari, Edge 用 ---
     &::-webkit-scrollbar {
       height: 5px; // スクロールバーの高さ（横スクロールの場合）
+      -webkit-appearance: none;
     }
 
     &::-webkit-scrollbar-track {
       background: #d9d9d9; // バーが通る道の背景色
+      -webkit-appearance: none;
     }
 
     &::-webkit-scrollbar-thumb {
       background: v.$color-accent-blue; // 動くツマミ部分の色
-      border-radius: 10px;
     }
 
-    // --- Firefox 用 ---
-    scrollbar-width: thin; // バーを細くする
-    scrollbar-color: v.$color-accent-blue #d9d9d9; // ツマミの色 道の色
+    // Firefox 用（Firefoxのみに限定）
+    @supports (-moz-appearance: none) {
+      scrollbar-width: thin;
+      scrollbar-color: v.$color-accent-blue #d9d9d9;
+    }
   }
 
   &__table {
